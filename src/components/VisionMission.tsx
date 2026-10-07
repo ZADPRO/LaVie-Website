@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, FlaskConical, ShieldCheck, Sprout, Building2, MapPin } from 'lucide-react';
+import { Leaf, FlaskConical, ShieldCheck, Sprout } from 'lucide-react';
 import farmerImg from '../assets/Home/farmer.png';
 
 export const VisionMission: React.FC = () => {
@@ -30,58 +30,39 @@ export const VisionMission: React.FC = () => {
       <div className="vm-watermark-bg"></div>
 
       <div className="vm-container">
-        {/* Top Grid: Arch Image (Left) & Vision Content (Right) */}
+        {/* Top Grid: Left 38% Image & Right Vision/Mission Headings */}
         <div className="vm-top-grid">
-          {/* Left Column: Curved Arch Featured Image */}
+          {/* Left Column: 38% Featured Arch Image */}
           <div className="vm-image-col">
             <div className="vm-arch-image-wrapper">
-              <img 
-                src={farmerImg} 
-                alt="Agri science farmer in field" 
-                className="vm-arch-img" 
+              <img
+                src={farmerImg}
+                alt="Agri science farmer in field"
+                className="vm-arch-img"
               />
             </div>
           </div>
 
-          {/* Right Column: Vision Header & Stat Badges */}
+          {/* Right Column: Vision Header, Statement & Mission Heading */}
           <div className="vm-content-col">
             <div className="vm-tag">
               <Leaf size={16} className="tag-icon" />
-              <span>OUR VISION</span>
+              <span>OUR VISION & MISSION</span>
             </div>
 
-            <h2 className="vm-title">Building India's Most Trusted Agri-Science Enterprise</h2>
+            <h3 className="vm-title">Our Vision & Commitment</h3>
 
             <p className="vm-vision-statement">
               To build a trusted Indian agricultural-input and crop sciences company delivering science-led, reliable and farmer-focused solutions.
             </p>
 
-            {/* Stat Badges Row */}
-            <div className="vm-stats-row">
-              <div className="vm-stat-badge">
-                <div className="vm-stat-icon-box">
-                  <Building2 size={24} />
-                </div>
-                <div className="vm-stat-info">
-                  <span className="vm-stat-number">30,000+ SQ. FT.</span>
-                  <span className="vm-stat-label">MANUFACTURING FACILITY</span>
-                </div>
-              </div>
-
-              <div className="vm-stat-badge">
-                <div className="vm-stat-icon-box">
-                  <MapPin size={24} />
-                </div>
-                <div className="vm-stat-info">
-                  <span className="vm-stat-number">4</span>
-                  <span className="vm-stat-label">OPERATIONAL LOCATIONS</span>
-                </div>
-              </div>
+            <div className="vm-mission-header">
+              <h3 className="vm-mission-title">Our Mission Pillars</h3>
             </div>
           </div>
         </div>
 
-        {/* Bottom Grid: 3 Mission Cards */}
+        {/* Mission Cards Row - Overlapping bottom of image */}
         <div className="vm-mission-cards-wrapper">
           <div className="vm-cards-grid">
             {missionCards.map((card, index) => {
@@ -90,9 +71,9 @@ export const VisionMission: React.FC = () => {
                 <div key={index} className="vm-mission-card">
                   <span className="vm-card-number">{card.number}</span>
                   <div className="vm-card-icon-wrapper">
-                    <IconComponent size={28} className="vm-card-icon" />
+                    <IconComponent size={26} className="vm-card-icon" />
                   </div>
-                  <h3 className="vm-card-title">{card.title}</h3>
+                  <h4 className="vm-card-title">{card.title}</h4>
                   <p className="vm-card-description">{card.description}</p>
                 </div>
               );

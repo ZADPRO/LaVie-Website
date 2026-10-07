@@ -1,6 +1,7 @@
 :root {
-  --font-heading: 'Stack Sans Notch Variable', 'Stack Sans Notch', sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  --font-subheading: 'Rethink Sans', sans-serif;
+  --font-body: 'Rethink Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   
   --color-primary: #0e8549;
   --color-primary-hover: #0b6c3b;
@@ -50,7 +51,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .bold-heading {
-  font-family: 'Stack Sans Notch Variable', 'Stack Sans Notch', sans-serif !important;
+  font-family: 'Syne', sans-serif !important;
   letter-spacing: -0.02em;
 }
 

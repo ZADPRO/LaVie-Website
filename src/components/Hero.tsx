@@ -30,15 +30,9 @@ export const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="hero-headline-wrapper">
             <h1 className="hero-title">
-              <span className="hero-title-inline">
-                {/* <svg className="leaf-icon-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 52C12 52 16 28 44 14C44 14 52 36 28 48C20 52 12 52 12 52Z" fill="#52C41A" />
-                  <path d="M12 52C24 44 38 30 52 10" stroke="#87E8DE" strokeWidth="3" strokeLinecap="round" />
-                </svg> */}
-                Science For <br />Better
-              </span>
+              <span className="hero-line-1">Science For Better</span>
               <br />
-              Agriculture
+              <span className="hero-line-2">Agriculture</span>
             </h1>
           </div>
 
