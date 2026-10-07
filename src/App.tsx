@@ -2,6 +2,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { AboutUs } from './components/AboutUs';
 import { Foundation } from './components/Foundation';
+import { VisionMission } from './components/VisionMission';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Hero />
         <AboutUs />
         <Foundation />
+        <VisionMission />
       </main>
     </div>
   );
