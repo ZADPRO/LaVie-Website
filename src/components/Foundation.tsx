@@ -56,11 +56,11 @@ export const Foundation: React.FC = () => {
 
               {/* Content Box */}
               <div className="card-content">
-                <h3 className="card-title">{card.title}</h3>
                 <div className="card-description">
-                  <div className="notch-float-spacer"></div>
                   {card.description}
                 </div>
+                <div className="card-hz-line"></div>
+                <h3 className="card-title">{card.title}</h3>
               </div>
 
               {/* White Padding Notch Corner with Small Icon Image */}

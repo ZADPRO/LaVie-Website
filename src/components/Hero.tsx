@@ -1,9 +1,8 @@
-import faImg from "../assets/Home/farmer.png";
+import React from 'react';
+import homeBgImg from "../assets/Home/HOME.jpeg";
 
 export const Hero: React.FC = () => {
-  // Placeholder images for background and farmer - user can easily swap these paths anytime
-  const bgImageUrl = "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2000&q=80";
-  const farmerImageUrl = faImg
+  const bgImageUrl = homeBgImg;
 
   return (
     <section className="hero-section" id="home">
@@ -40,15 +39,6 @@ export const Hero: React.FC = () => {
             Science driven solutions for healthier soil, stronger crops and a more sustainable agricultural future.
           </p>
 
-        </div>
-
-        {/* Right Side Farmer Image */}
-        <div className="hero-image-wrapper">
-          <img
-            src={farmerImageUrl}
-            alt="Organic Farmer"
-            className="farmer-img-cutout"
-          />
         </div>
       </div>
     </section>
