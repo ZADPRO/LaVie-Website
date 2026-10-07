@@ -7,7 +7,7 @@ export const Header: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const sections = ['home', 'about', 'shop', 'pages', 'blog', 'contact'];
+    const sections = ['home', 'about', 'foundation', 'manufacture', 'why-us', 'product'];
 
     const handleScroll = () => {
       // Header background scroll toggle
@@ -20,21 +20,18 @@ export const Header: React.FC = () => {
       // Active section detection
       const scrollPosition = window.scrollY + 180;
       
-      // Check foundation section first - treat it as part of 'about'
-      const foundationElement = document.getElementById('foundation');
-
-      if (foundationElement && scrollPosition >= foundationElement.offsetTop && scrollPosition < foundationElement.offsetTop + foundationElement.offsetHeight) {
-        setActiveSection('about');
-        return;
-      }
-
+      // Check sections
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
           const top = element.offsetTop;
           const height = element.offsetHeight;
           if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
+            if (['foundation', 'manufacture', 'why-us'].includes(sectionId)) {
+              setActiveSection('about');
+            } else {
+              setActiveSection(sectionId);
+            }
             break;
           }
         }
@@ -100,38 +97,11 @@ export const Header: React.FC = () => {
             </li>
             <li className="nav-item">
               <a 
-                href="#shop" 
-                className={`nav-link ${activeSection === 'shop' ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, 'shop')}
+                href="#product" 
+                className={`nav-link ${activeSection === 'product' ? 'active' : ''}`}
+                onClick={(e) => handleNavClick(e, 'product')}
               >
-                Shop
-              </a>
-            </li>
-            <li className="nav-item">
-              <a 
-                href="#pages" 
-                className={`nav-link ${activeSection === 'pages' ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, 'pages')}
-              >
-                Pages
-              </a>
-            </li>
-            <li className="nav-item">
-              <a 
-                href="#blog" 
-                className={`nav-link ${activeSection === 'blog' ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, 'blog')}
-              >
-                Blog
-              </a>
-            </li>
-            <li className="nav-item">
-              <a 
-                href="#contact" 
-                className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, 'contact')}
-              >
-                Contact
+                Product
               </a>
             </li>
           </ul>
