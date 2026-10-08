@@ -1,4 +1,5 @@
 import React from 'react';
+import { Microscope, ShieldCheck, Wheat, Leaf } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
 
 export const Approach: React.FC = () => {
@@ -7,25 +8,25 @@ export const Approach: React.FC = () => {
       id: 1,
       title: 'Science-Led Development',
       description: 'Formulations guided by agronomic and soil science principles.',
-      image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'
+      icon: Microscope
     },
     {
       id: 2,
       title: 'Dependable Quality',
       description: 'Consistent processes for reliable, repeatable product.',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'
+      icon: ShieldCheck
     },
     {
       id: 3,
       title: 'Practical Relevance',
       description: 'Products shaped by real field conditions and crop needs.',
-      image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80'
+      icon: Wheat
     },
     {
       id: 4,
       title: 'Sustainable Future',
       description: 'Natural, bio-based solutions that respect soil and environment.',
-      image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80'
+      icon: Leaf
     }
   ];
 
@@ -46,23 +47,20 @@ export const Approach: React.FC = () => {
 
         {/* 4 Cards Grid */}
         <div className="approach-cards-grid stagger-reveal">
-          {approachItems.map((item) => (
-            <div key={item.id} className="approach-card-item">
-              <div className="approach-card-image-wrapper">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="approach-card-img"
-                />
+          {approachItems.map((item) => {
+            const IconComponent = item.icon;
+            return (
+              <div key={item.id} className="approach-card-item">
+                <div className="approach-card-icon-box">
+                  <IconComponent className="approach-card-icon" size={28} />
+                </div>
+                <div className="approach-card-content">
+                  <h3 className="approach-card-title">{item.title}</h3>
+                  <p className="approach-card-desc">{item.description}</p>
+                </div>
               </div>
-
-              {/* White Content Box Overlap (No share button as requested) */}
-              <div className="approach-card-content">
-                <h3 className="approach-card-title">{item.title}</h3>
-                <p className="approach-card-desc">{item.description}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
