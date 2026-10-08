@@ -41,6 +41,22 @@ export const WhyLaVie: React.FC = () => {
   return (
     <section className="why-section" id="why-us">
       <div className="why-container">
+        {/* Mobile Header: Tag + Title shown first on mobile */}
+        <div className="why-header-mobile reveal-up">
+          <div className="why-tag">
+            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
+            <span>WHY CHOOSE US</span>
+          </div>
+
+          <h2 className="why-title">
+            Why La Vie Crop Sciences
+          </h2>
+
+          <p className="why-subtitle">
+            Our strengths as a dependable partner for public-sector and institutional supply
+          </p>
+        </div>
+
         {/* Left Side 3-Image Composition */}
         <div className="why-images-col reveal-left">
           {/* Decorative Dot Matrix Background Pattern */}
@@ -68,38 +84,30 @@ export const WhyLaVie: React.FC = () => {
             />
           </div>
 
-          {/* Image 3: Small Floating Accent Badge Image */}
-          {/* <div className="why-img-card img-card-3">
-            <img
-              src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=600&q=80"
-              alt="Agro product sourcing"
-              className="why-img"
-            />
-          </div> */}
-
           {/* Green Star Icon Accent */}
           <div className="why-star-accent1">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="#0e8549" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
             </svg>
           </div>
-
         </div>
 
         {/* Right Side Content Accordion */}
         <div className="why-content-col reveal-right">
-          <div className="why-tag">
-            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
-            <span>WHY CHOOSE US</span>
+          <div className="why-header-desktop">
+            <div className="why-tag">
+              <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
+              <span>WHY CHOOSE US</span>
+            </div>
+
+            <h2 className="why-title">
+              Why La Vie Crop Sciences
+            </h2>
+
+            <p className="why-subtitle">
+              Our strengths as a dependable partner for public-sector and institutional supply
+            </p>
           </div>
-
-          <h2 className="why-title">
-            Why La Vie Crop Sciences
-          </h2>
-
-          <p className="why-subtitle">
-            Our strengths as a dependable partner for public-sector and institutional supply
-          </p>
 
           {/* Accordion List */}
           <div className="why-accordion-list stagger-reveal">
