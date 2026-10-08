@@ -10,6 +10,18 @@ export const AboutUs: React.FC = () => {
   return (
     <section className="about-section" id="about">
       <div className="about-container">
+        {/* Mobile Header: Tag + Title displayed first on mobile */}
+        <div className="about-header-mobile reveal-up">
+          <div className="about-tag">
+            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
+            <span>About La Vie</span>
+          </div>
+          <h2 className="about-heading">
+            Science, Quality &amp; Sustainability in Agriculture
+          </h2>
+        </div>
+
+        {/* Full Image */}
         <div className="leaf-mask-container reveal-left">
           <img
             src={mainAboutImg}
@@ -17,30 +29,28 @@ export const AboutUs: React.FC = () => {
             className="leaf-mask-img"
           />
         </div>
-        {/* Left Side: Leaf-Shaped Image Collage */}
-        <div className="about-image-column">
-          <div className="about-image-wrapper">
-          </div>
-        </div>
 
-        {/* Right Side: About Content */}
+        {/* About Content */}
         <div className="about-content-column">
-          <div className="about-tag reveal-right">
-            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
-            <span>About La Vie</span>
-          </div>
+          {/* Desktop Header: Tag + Title displayed in right column on desktop */}
+          <div className="about-header-desktop">
+            <div className="about-tag reveal-right">
+              <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
+              <span>About La Vie</span>
+            </div>
 
-          <h2 className="about-heading reveal-right delay-100">
-            Science, Quality & Sustainability in Agriculture
-          </h2>
+            <h2 className="about-heading reveal-right delay-100">
+              Science, Quality &amp; Sustainability in Agriculture
+            </h2>
+          </div>
 
           <div className="about-description reveal-right delay-200">
             <p>
               La Vie Crop Sciences is a Tamil Nadu based agricultural enterprise focused on crop nutrition, soil health, biological inputs and sustainable agriculture. Established in 2023, we combine agricultural expertise, manufacturing, agro trading and technology to deliver reliable solutions for modern farming.
             </p>
             <p>
-              Backed by 20+ years of promoter-group experience, we take a holistic approach from soil and seed to crop and supply chain, creating science driven solutions for healthier crops, better productivity and a sustainable agricultural future.            </p>
-
+              Backed by 20+ years of promoter-group experience, we take a holistic approach from soil and seed to crop and supply chain, creating science driven solutions for healthier crops, better productivity and a sustainable agricultural future.
+            </p>
           </div>
 
           {/* Four Highlight Points Grid */}
