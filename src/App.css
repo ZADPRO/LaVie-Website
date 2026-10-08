@@ -194,7 +194,7 @@
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: 4.4rem;
+  font-size: 3.2rem;
   font-weight: 700;
   line-height: 1.05;
   color: #ffffff;
@@ -225,7 +225,7 @@
 
 .hero-subtitle {
   font-family: var(--font-subheading);
-  font-size: 1.35rem;
+  font-size: 1.125rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.95);
   margin: 0 auto 2.5rem;
@@ -501,7 +501,7 @@
 
 .about-heading {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   font-weight: 700;
   line-height: 1.15;
   color: var(--color-dark);
@@ -661,7 +661,7 @@
 
 .foundation-title {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 0.75rem;
@@ -1171,7 +1171,7 @@
 
 .mfg-title {
   font-family: var(--font-heading);
-  font-size: 2.75rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 1.5rem;
@@ -1517,7 +1517,7 @@
 
 .why-title {
   font-family: var(--font-heading);
-  font-size: 2.75rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 0.75rem;
@@ -2099,7 +2099,7 @@
 
 .provide-main-heading {
   font-family: var(--font-heading);
-  font-size: 3.2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--color-dark);
   line-height: 1.1;
