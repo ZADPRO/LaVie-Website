@@ -7,6 +7,7 @@ import { VisionMission } from './components/VisionMission';
 import { WhyLaVie } from './components/WhyLaVie';
 import { ProductPortfolio } from './components/ProductPortfolio';
 import { WhatWeProvide } from './components/WhatWeProvide';
+import { Approach } from './components/Approach';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <WhyLaVie />
         <ProductPortfolio />
         <WhatWeProvide />
+        <Approach />
       </main>
     </div>
   );

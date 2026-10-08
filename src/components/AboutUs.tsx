@@ -1,34 +1,25 @@
 import React from 'react';
 import { Calendar, Award, Factory, MapPin, Leaf } from 'lucide-react';
+import aboutImg from '../assets/aboutus/about image.png';
 
 export const AboutUs: React.FC = () => {
-  // Sample placeholder images matching the reference design layout
-  const mainAboutImg = "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80";
-  const circularInsetImg = "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80";
+  // Main about image imported from assets
+  const mainAboutImg = aboutImg;
 
   return (
     <section className="about-section" id="about">
       <div className="about-container">
+        <div className="leaf-mask-container">
+          <img
+            src={mainAboutImg}
+            alt="Lush Agricultural Crops"
+            className="leaf-mask-img"
+          />
+        </div>
         {/* Left Side: Leaf-Shaped Image Collage */}
         <div className="about-image-column">
           <div className="about-image-wrapper">
-            {/* Main Curved Leaf Masked Image */}
-            <div className="leaf-mask-container">
-              <img
-                src={mainAboutImg}
-                alt="Lush Agricultural Crops"
-                className="leaf-mask-img"
-              />
-            </div>
 
-            {/* Circular Overlapping Inset Image */}
-            <div className="circle-inset-container">
-              <img
-                src={circularInsetImg}
-                alt="Tractor on Agricultural Field"
-                className="circle-inset-img"
-              />
-            </div>
 
             {/* Small Floating Leaf Accent */}
             <div className="about-floating-leaf">

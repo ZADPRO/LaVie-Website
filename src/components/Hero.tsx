@@ -1,8 +1,26 @@
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
 import homeBgImg from "../assets/Home/HOME.jpeg";
 
 export const Hero: React.FC = () => {
   const bgImageUrl = homeBgImg;
+
+  const handleViewProducts = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('products');
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <section className="hero-section" id="home">
@@ -29,9 +47,16 @@ export const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="hero-headline-wrapper">
             <h1 className="hero-title">
-              <span className="hero-line-1">Science For Better</span>
+              <span className="hero-line-1">Science For</span>
               <br />
-              <span className="hero-line-2">Agriculture</span>
+              <div className="hero-line-2-container">
+                <span className="hero-word-better">Better </span>
+                <span className="hero-word-agriculture">Agriculture</span>
+                {/* Solid Color #e6c05d Arc Underline Stroke spanning Better Agriculture */}
+                <svg className="hero-arc-stroke" viewBox="0 0 400 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 12 20 Q 210 3 408 20" stroke="#e6c05d" strokeWidth="4" strokeLinecap="round" />
+                </svg>
+              </div>
             </h1>
           </div>
 
@@ -39,6 +64,16 @@ export const Hero: React.FC = () => {
             Science driven solutions for healthier soil, stronger crops and a more sustainable agricultural future.
           </p>
 
+          <div className="hero-cta-wrapper">
+            <a 
+              href="#products" 
+              className="btn-start"
+              onClick={handleViewProducts}
+            >
+              <span>View Products</span>
+              <ArrowRight className="arrow-icon" size={18} />
+            </a>
+          </div>
         </div>
       </div>
     </section>

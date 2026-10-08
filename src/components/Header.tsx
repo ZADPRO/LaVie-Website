@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { LayoutGrid } from 'lucide-react';
-import logoImg from '../assets/Logo/Logo.png';
+import { PhoneCall } from 'lucide-react';
+import logoColorImg from '../assets/Logo/Logo.png';
+import logoWhiteImg from '../assets/Logo/La Vie Logo_white.png';
 
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const sections = ['home', 'about', 'foundation', 'manufacture', 'why-us', 'product'];
+    const sections = ['home', 'about', 'foundation', 'manufacture', 'why-us', 'product', 'approach'];
 
     const handleScroll = () => {
       // Header background scroll toggle
@@ -19,7 +20,7 @@ export const Header: React.FC = () => {
 
       // Active section detection
       const scrollPosition = window.scrollY + 180;
-      
+
       // Check sections
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
@@ -64,56 +65,66 @@ export const Header: React.FC = () => {
   return (
     <header className={`header-wrapper ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        {/* Brand Logo */}
-        <a 
-          href="#home" 
-          className="logo-link" 
-          title="La Vie Crop Science Pvt Ltd."
-          onClick={(e) => handleNavClick(e, 'home')}
-        >
-          <img src={logoImg} alt="La Vie Crop Science Pvt Ltd." className="logo-img" />
-        </a>
+        {/* Left Side Group: Logo + Navigation Links */}
+        <div className="header-left-group">
+          <a
+            href="#home"
+            className="logo-link"
+            title="La Vie Crop Science Pvt Ltd."
+            onClick={(e) => handleNavClick(e, 'home')}
+          >
+            <img
+              src={scrolled ? logoColorImg : logoWhiteImg}
+              alt="La Vie Crop Science Pvt Ltd."
+              className="logo-img"
+            />
+          </a>
 
-        {/* Navigation Menu */}
-        <nav>
-          <ul className="nav-menu">
-            <li className="nav-item">
-              <a 
-                href="#home" 
-                className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, 'home')}
-              >
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a 
-                href="#about" 
-                className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, 'about')}
-              >
-                About Us
-              </a>
-            </li>
-            <li className="nav-item">
-              <a 
-                href="#product" 
-                className={`nav-link ${activeSection === 'product' ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, 'product')}
-              >
-                Product
-              </a>
-            </li>
-          </ul>
-        </nav>
+          {/* Navigation Menu */}
+          <nav className="header-nav">
+            <ul className="nav-menu">
+              <li className="nav-item">
+                <a
+                  href="#home"
+                  className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
+                  onClick={(e) => handleNavClick(e, 'home')}
+                >
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  href="#about"
+                  className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
+                  onClick={(e) => handleNavClick(e, 'about')}
+                >
+                  About Us
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  href="#product"
+                  className={`nav-link ${activeSection === 'product' ? 'active' : ''}`}
+                  onClick={(e) => handleNavClick(e, 'product')}
+                >
+                  Product
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-        {/* Header Right Actions */}
+        {/* Right Side Action: Call-to-Action Phone Button */}
         <div className="header-actions">
-
-
-          <button className="grid-menu-btn" aria-label="Menu Grid">
-            <LayoutGrid size={22} />
-          </button>
+          <a href="tel:+919003227469" className="header-phone-cta">
+            <div className="phone-icon-box">
+              <PhoneCall size={18} />
+            </div>
+            <div className="phone-cta-details">
+              <span className="phone-cta-label">Give us a call</span>
+              <span className="phone-cta-num">+91 9003227469</span>
+            </div>
+          </a>
         </div>
       </div>
     </header>
