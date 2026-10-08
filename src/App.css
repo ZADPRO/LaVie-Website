@@ -2873,7 +2873,7 @@
   align-items: flex-end;
   justify-content: space-between;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0;
 }
 
 .footer-quick-contacts {
@@ -2943,12 +2943,15 @@
   display: flex;
   align-items: flex-end;
   pointer-events: none;
+  margin-bottom: -30px;
+  z-index: 2;
 }
 
 .footer-farmer-img {
-  height: 235px;
+  height: 20rem;
   width: auto;
   object-fit: contain;
+  display: block;
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
 }
 
@@ -3098,8 +3101,12 @@
     gap: 2.5rem;
   }
 
+  .footer-farmer-container {
+    margin-bottom: -26px;
+  }
+
   .footer-farmer-img {
-    height: 200px;
+    height: 800px;
   }
 }
 
@@ -3144,10 +3151,11 @@
     align-self: flex-end;
     margin-top: -20px;
     height: 160px;
+    margin-bottom: -22px;
   }
 
   .footer-farmer-img {
-    height: 180px;
+    height: 185px;
   }
 
   .footer-bottom-grid {
