@@ -1,6 +1,7 @@
 import React from 'react';
-import { Leaf, FlaskConical, ShieldCheck, Sprout } from 'lucide-react';
+import { FlaskConical, ShieldCheck, Sprout } from 'lucide-react';
 import farmerImg from '../assets/Home/farmer.png';
+import leafIconImg from '../assets/common/Leaf.png';
 
 export const VisionMission: React.FC = () => {
   const missionCards = [
@@ -46,7 +47,7 @@ export const VisionMission: React.FC = () => {
           {/* Right Column: Vision Header, Statement & Mission Heading */}
           <div className="vm-content-col">
             <div className="vm-tag">
-              <Leaf size={16} className="tag-icon" />
+              <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
               <span>OUR VISION & MISSION</span>
             </div>
 

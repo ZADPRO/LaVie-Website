@@ -1,9 +1,9 @@
 import React from 'react';
-import { Leaf } from 'lucide-react';
 import agricultureImg from '../assets/Foundation/Agriculture.jpeg';
 import manufacturingImg from '../assets/Foundation/Mnufacturing.jpeg';
 import agroTradingImg from '../assets/Foundation/Agro-trading.jpeg';
 import technologyImg from '../assets/Foundation/Technology.jpeg';
+import leafIconImg from '../assets/common/Leaf.png';
 
 export const Foundation: React.FC = () => {
   const foundationCards = [
@@ -39,7 +39,7 @@ export const Foundation: React.FC = () => {
         {/* Header Section */}
         <div className="foundation-header">
           <div className="foundation-tag">
-            <Leaf size={16} className="tag-icon" />
+            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>FOUNDATION</span>
           </div>
           <h2 className="foundation-title">A Multi-Disciplinary Foundation</h2>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Leaf, Plus, Minus } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
+import leafIconImg from '../assets/common/Leaf.png';
 
 export const WhyLaVie: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -86,7 +87,7 @@ export const WhyLaVie: React.FC = () => {
         {/* Right Side Content Accordion */}
         <div className="why-content-col">
           <div className="why-tag">
-            <Leaf size={16} className="tag-icon" />
+            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>WHY CHOOSE US</span>
           </div>
 

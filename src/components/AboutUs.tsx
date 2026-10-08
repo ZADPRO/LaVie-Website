@@ -1,6 +1,7 @@
 import React from 'react';
-import { Calendar, Award, Factory, MapPin, Leaf } from 'lucide-react';
+import { Calendar, Award, Factory, MapPin } from 'lucide-react';
 import aboutImg from '../assets/aboutus/about image.png';
+import leafIconImg from '../assets/common/Leaf.png';
 
 export const AboutUs: React.FC = () => {
   // Main about image imported from assets
@@ -19,19 +20,13 @@ export const AboutUs: React.FC = () => {
         {/* Left Side: Leaf-Shaped Image Collage */}
         <div className="about-image-column">
           <div className="about-image-wrapper">
-
-
-            {/* Small Floating Leaf Accent */}
-            <div className="about-floating-leaf">
-              <Leaf size={32} className="floating-leaf-svg" />
-            </div>
           </div>
         </div>
 
         {/* Right Side: About Content */}
         <div className="about-content-column">
           <div className="about-tag">
-            <Leaf size={16} className="tag-icon" />
+            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>About La Vie</span>
           </div>
 

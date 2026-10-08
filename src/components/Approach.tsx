@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf } from 'lucide-react';
+import leafIconImg from '../assets/common/Leaf.png';
 
 export const Approach: React.FC = () => {
   const approachItems = [
@@ -35,7 +35,7 @@ export const Approach: React.FC = () => {
         {/* Top Header */}
         <div className="approach-header">
           <div className="approach-tag">
-            <Leaf size={16} className="tag-icon" />
+            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>OUR APPROACH</span>
           </div>
           <h2 className="approach-title">Our Approach</h2>

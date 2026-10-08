@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Leaf, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
+import leafIconImg from '../assets/common/Leaf.png';
 
 export const ProductPortfolio: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -92,7 +93,7 @@ export const ProductPortfolio: React.FC = () => {
         {/* Top Header */}
         <div className="portfolio-header">
           <div className="portfolio-tag">
-            <Leaf size={16} className="tag-icon" />
+            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>PRODUCT PORTFOLIO</span>
           </div>
           <h2 className="portfolio-title">Product Portfolio</h2>

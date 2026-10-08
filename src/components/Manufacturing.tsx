@@ -1,5 +1,6 @@
 import React from 'react';
-import { Leaf, Check, Building2 } from 'lucide-react';
+import { Check, Building2 } from 'lucide-react';
+import leafIconImg from '../assets/common/Leaf.png';
 
 export const Manufacturing: React.FC = () => {
   const points = [
@@ -16,7 +17,7 @@ export const Manufacturing: React.FC = () => {
         {/* Left Side Content */}
         <div className="mfg-content-col">
           <div className="mfg-tag">
-            <Leaf size={16} className="tag-icon" />
+            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>MANUFACTURE</span>
           </div>
 

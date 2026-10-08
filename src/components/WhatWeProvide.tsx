@@ -11,6 +11,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import productsData from '../data/products.json';
+import leafIconImg from '../assets/common/Leaf.png';
 
 export interface Product {
   id: string;
@@ -106,7 +107,7 @@ export const WhatWeProvide: React.FC = () => {
         {/* Left Column (30% Width): Title, Badge, Controls */}
         <div className="provide-left-30">
           <div className="provide-badge-tag">
-            <Leaf className="tag-icon" size={16} />
+            <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>WHAT WE PROVIDE</span>
           </div>
 

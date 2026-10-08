@@ -605,6 +605,14 @@
   color: var(--color-primary);
 }
 
+.tag-leaf-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
 .about-heading {
   font-family: var(--font-heading);
   font-size: 2.1rem;
@@ -903,46 +911,28 @@
   transform: translateY(0);
 }
 
-/* White Padding Notch Corner with Smooth Inverted Rounded Corners */
 .arrow-btn-notch {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 62px;
-  height: 62px;
+  bottom: -1px;
+  right: -1px;
+  width: 68px;
+  height: 64px;
   background-color: #ffffff;
-  border-top-left-radius: 20px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 24px;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  overflow: hidden;
+  border: none;
+  outline: none;
 }
 
-.arrow-btn-notch::before {
-  content: '';
-  position: absolute;
-  top: -16px;
-  right: 0;
-  width: 16px;
-  height: 16px;
-  background: transparent;
-  border-bottom-right-radius: 16px;
-  /* box-shadow: 6px 6px 0 6px #ffffff; */
-  pointer-events: none;
-}
-
+.arrow-btn-notch::before,
 .arrow-btn-notch::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: -16px;
-  width: 16px;
-  height: 16px;
-  background: transparent;
-  border-bottom-right-radius: 16px;
-  /* box-shadow: 6px 6px 0 6px #ffffff; */
-  pointer-events: none;
+  display: none;
 }
 
 .card-image-badge {
