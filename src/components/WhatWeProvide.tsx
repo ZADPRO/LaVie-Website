@@ -108,7 +108,7 @@ export const WhatWeProvide: React.FC = () => {
         <div className="provide-left-30">
           <div className="provide-badge-tag">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
-            <span>WHAT WE PROVIDE</span>
+            <span>PRODUCT</span>
           </div>
 
           <h2 className="provide-main-heading">

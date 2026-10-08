@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { MapPin } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
 
 const locations = [
@@ -14,7 +14,6 @@ const locations = [
     ],
     city: 'Coimbatore',
     mapEmbed: 'https://www.google.com/maps?cid=1774303926377452674&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed'
-
   },
   {
     id: 2,
@@ -27,7 +26,6 @@ const locations = [
     ],
     city: 'Salem',
     mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.533056043397!2d78.16829827322775!3d11.630477444949071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf579858d39a7%3A0xb32f60367f0a1761!2sLAVIE%20AGRI%20SOLUTIONS%20PRIVATE%20LIMITED!5e1!3m2!1sen!2sin!4v1791452720228!5m2!1sen!2sin'
-
   },
   {
     id: 3,
@@ -40,7 +38,6 @@ const locations = [
     ],
     city: 'Namakkal',
     mapEmbed: 'https://www.google.com/maps?q=Mettukadu,+Koneripatti,+Namakkal,+Tamil+Nadu+637408&output=embed&z=15'
-
   },
   {
     id: 4,
@@ -52,127 +49,175 @@ const locations = [
     ],
     city: 'Thiruvannamalai',
     mapEmbed: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15585.22451323601!2d79.21113350667473!3d12.225152728664595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf130bb371c6d9%3A0xdcd97c6f5923fd17!2sLavie%20Agri%20Solutions%20Private%20Limited!5e1!3m2!1sen!2sin!4v1791452946205!5m2!1sen!2sin'
-
-  },
+  }
 ];
 
-const CARDS_PER_PAGE = 2;
-const totalPages = Math.ceil(locations.length / CARDS_PER_PAGE);
-
 export const OurPresence: React.FC = () => {
-  const [pageIndex, setPageIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const baseLocations = locations;
+  // Triple the array to enable infinite circular looping
+  const extendedLocations = [...baseLocations, ...baseLocations, ...baseLocations];
 
-  const goToPage = useCallback(
-    (page: number) => {
-      if (isAnimating || page === pageIndex) return;
-      setIsAnimating(true);
-      setTimeout(() => {
-        setPageIndex(page);
-        setIsAnimating(false);
-      }, 380);
-    },
-    [pageIndex, isAnimating]
-  );
+  // Start in the middle set of items
+  const initialIndex = baseLocations.length;
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [cardOffset, setCardOffset] = useState(404);
 
-  const goNext = useCallback(() => {
-    const next = (pageIndex + 1) % totalPages;
-    setIsAnimating(true);
-    setTimeout(() => {
-      setPageIndex(next);
-      setIsAnimating(false);
-    }, 380);
-  }, [pageIndex]);
+  const autoTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const timer = setInterval(goNext, 4000);
-    return () => clearInterval(timer);
-  }, [goNext]);
+    const updateOffset = () => {
+      if (window.innerWidth <= 640) {
+        setCardOffset(324);
+      } else {
+        setCardOffset(404);
+      }
+    };
+    updateOffset();
+    window.addEventListener('resize', updateOffset);
+    return () => window.removeEventListener('resize', updateOffset);
+  }, []);
 
-  const visibleCards = locations.slice(
-    pageIndex * CARDS_PER_PAGE,
-    pageIndex * CARDS_PER_PAGE + CARDS_PER_PAGE
-  );
+  const nextSlide = () => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  const prevSlide = () => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
+  };
+
+  const handleTransitionEnd = () => {
+    // When reaching the end of the middle set, silently jump back to middle set start
+    if (currentIndex >= baseLocations.length * 2) {
+      setIsTransitioning(false);
+      setCurrentIndex(currentIndex - baseLocations.length);
+    }
+    // When moving backward past middle set start, silently jump forward to middle set end
+    else if (currentIndex < baseLocations.length) {
+      setIsTransitioning(false);
+      setCurrentIndex(currentIndex + baseLocations.length);
+    }
+  };
+
+  const startAutoSlide = () => {
+    stopAutoSlide();
+    autoTimerRef.current = setInterval(() => {
+      nextSlide();
+    }, 3500);
+  };
+
+  const stopAutoSlide = () => {
+    if (autoTimerRef.current) {
+      clearInterval(autoTimerRef.current);
+      autoTimerRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => stopAutoSlide();
+  }, []);
+
+  const handleManualPrev = () => {
+    prevSlide();
+    startAutoSlide();
+  };
+
+  const handleManualNext = () => {
+    nextSlide();
+    startAutoSlide();
+  };
 
   return (
     <section className="presence-section" id="contact">
-      <div className="presence-container">
-
-        {/* ── Left 30% ── */}
-        <div className="presence-left">
-          <div className="presence-tag">
+      <div className="presence-container-row">
+        {/* Left Column (30% Width): Tag, Title, Carousel Controls */}
+        <div className="presence-left-30">
+          <div className="presence-badge-tag">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>OUR PRESENCE</span>
           </div>
 
-          <h2 className="presence-title">
-            Four locations<br />across<br />Tamil Nadu
+          <h2 className="presence-main-heading">
+            Four Locations<br />Across<br />Tamil Nadu
           </h2>
 
-          <div className="presence-dots">
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <button
-                key={i}
-                className={i === pageIndex ? 'presence-dot active' : 'presence-dot'}
-                onClick={() => goToPage(i)}
-                aria-label={`Go to page ${i + 1}`}
-              />
-            ))}
+          {/* Carousel Arrow Controls matching WhatWeProvide */}
+          <div className="presence-controls-area">
+            <button
+              className="carousel-arrow-btn prev-btn"
+              onClick={handleManualPrev}
+              aria-label="Previous Location"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              className="carousel-arrow-btn next-btn"
+              onClick={handleManualNext}
+              aria-label="Next Location"
+            >
+              <ChevronRight size={22} />
+            </button>
           </div>
         </div>
 
-        {/* ── Right 70%: 2-card row ── */}
-        <div className="presence-right">
-          <div className={isAnimating ? 'presence-cards-row cards-exit' : 'presence-cards-row cards-enter'}>
-            {visibleCards.map((loc) => (
-              <div key={loc.id} className="presence-card">
+        {/* Right Column (70% Width): Carousel Track with exact original Card design */}
+        <div
+          className="presence-right-70"
+          onMouseEnter={stopAutoSlide}
+          onMouseLeave={startAutoSlide}
+        >
+          <div className="presence-carousel-wrapper">
+            <div
+              className="presence-carousel-track"
+              onTransitionEnd={handleTransitionEnd}
+              style={{
+                transform: `translateX(-${currentIndex * cardOffset}px)`,
+                transition: isTransitioning ? 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)' : 'none'
+              }}
+            >
+              {extendedLocations.map((loc, idx) => (
+                <div key={`${loc.id}-${idx}`} className="presence-card">
+                  {/* Map Section */}
+                  <div className="presence-map-wrapper">
+                    <iframe
+                      src={loc.mapEmbed}
+                      title={loc.type}
+                      className="presence-map-iframe"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
 
-                {/* Map Section */}
-                <div className="presence-map-wrapper">
-                  <iframe
-                    src={loc.mapEmbed}
-                    title={loc.type}
-                    className="presence-map-iframe"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
+                    {/* Top-Left: District Badge */}
+                    <div className="presence-district-badge">
+                      {loc.district}
+                    </div>
 
-                  {/* Top-Left: District Badge (replacing date badge) */}
-                  <div className="presence-district-badge">
-                    {loc.district}
+                    {/* Bottom-Left Notch Tab: Address Heading */}
+                    <div className="presence-heading-tab">
+                      <MapPin size={14} className="presence-tab-icon" />
+                      <span>{loc.type}</span>
+                    </div>
                   </div>
 
-                  {/* Bottom-Left Notch Tab: Address Heading (replacing Ha Ei & comment) */}
-                  <div className="presence-heading-tab">
-                    <MapPin size={14} className="presence-tab-icon" />
-                    <span>{loc.type}</span>
+                  {/* Card Body: Address below */}
+                  <div className="presence-card-body">
+                    <h3 className="presence-address-title">
+                      {loc.addressLines.map((line, lineIdx) => (
+                        <React.Fragment key={lineIdx}>
+                          {line}
+                          {lineIdx < loc.addressLines.length - 1 && <br />}
+                        </React.Fragment>
+                      ))}
+                    </h3>
                   </div>
                 </div>
-
-                {/* Card Body: Address below (replacing article title, More details removed) */}
-                <div className="presence-card-body">
-                  <h3 className="presence-address-title">
-                    {loc.addressLines.map((line, idx) => (
-                      <React.Fragment key={idx}>
-                        {line}
-                        {idx < loc.addressLines.length - 1 && <br />}
-                      </React.Fragment>
-                    ))}
-                  </h3>
-                </div>
-
-              </div>
-            ))}
-          </div>
-
-          {/* Counter */}
-          <div className="presence-counter">
-            <span className="presence-counter-current">{String(pageIndex + 1).padStart(2, '0')}</span>
-            <span className="presence-counter-sep">/</span>
-            <span className="presence-counter-total">{String(totalPages).padStart(2, '0')}</span>
+              ))}
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

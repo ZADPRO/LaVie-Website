@@ -37,7 +37,6 @@ export const Footer: React.FC = () => {
     });
   };
 
-
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -64,8 +63,6 @@ export const Footer: React.FC = () => {
         {/* Left Column: Corporate Information Card (Overhanging) */}
         <div className="footer-corporate-card">
           <div className="corp-card-header">
-
-
             <h3 className="corp-card-subtitle">La Vie Agri Solutions Pvt. Ltd.</h3>
           </div>
 
@@ -235,7 +232,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a href="#products" onClick={(e) => handleNavClick(e, 'products')}>
-                    What We Provide
+                    Product
                   </a>
                 </li>
                 <li>
