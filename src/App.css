@@ -907,11 +907,11 @@
 .vision-mission-section {
   position: relative;
   padding: 5rem 0;
-  background-color: #f7faf8;
+  background-color: #f8faf9;
   background-image: url('./assets/vission/Mission-Bg.jpeg');
   background-repeat: no-repeat;
-  background-position: center right;
-  background-size: cover;
+  background-position: right bottom;
+  background-size: contain;
   width: 100%;
   overflow: hidden;
 }
