@@ -4670,13 +4670,46 @@ body {
     width: 100% !important;
   }
 
+  /* Footer tree image centered above content / divider */
   .footer-farmer-container {
-    display: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+    width: 100% !important;
+    height: 180px !important;
+    margin: 1.5rem auto -1px auto !important;
+    position: relative !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
   }
 
+  .footer-farmer-img {
+    height: 190px !important;
+    max-height: 190px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4)) !important;
+  }
+
+  /* Useful Links & Explore in same row (50% / 50%), Brand spans full width below */
   .footer-bottom-grid {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.75rem 1rem !important;
+    width: 100% !important;
+  }
+
+  .footer-links-col {
+    width: 100% !important;
+  }
+
+  .footer-brand-col {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+    padding-top: 0.5rem !important;
   }
 
   .footer-scroll-top-btn {
