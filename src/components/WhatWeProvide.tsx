@@ -3,7 +3,6 @@ import {
   Leaf,
   ChevronLeft,
   ChevronRight,
-  Award,
   Sprout,
   FlaskConical,
   Droplets,
