@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Check } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
+import portImg1 from '../assets/Portfolio/Portfolio-1.png';
+import portImg2 from '../assets/Portfolio/Portfolio-2.jpeg';
+import portImg3 from '../assets/Portfolio/Portfolio-3.jpeg';
+import portImg4 from '../assets/Portfolio/Portfolio-4.jpeg';
+import portImg5 from '../assets/Portfolio/Portfolio-5.jpeg';
+import portImg6 from '../assets/Portfolio/Portfolio-6.png';
 
 export const ProductPortfolio: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -18,14 +24,7 @@ export const ProductPortfolio: React.FC = () => {
         'Micronutrients and secondary nutrients',
         'Organic manures',
         'PROM and PDM'
-      ],
-      // Sample image placeholders for user replacement
-      backLeftImg: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80',
-      frontLeftImg: 'https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=600&q=80',
-      topRightImg: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=500&q=80',
-      farRightImg: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80',
-      mintLeafImg: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=400&q=80',
-      basilLeafImg: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=400&q=80'
+      ]
     },
     {
       id: 'biological',
@@ -38,13 +37,7 @@ export const ProductPortfolio: React.FC = () => {
         'Humic and fulvic substances',
         'Amino acids and plant extracts',
         'Microbial inputs'
-      ],
-      backLeftImg: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80',
-      frontLeftImg: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80',
-      topRightImg: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80',
-      farRightImg: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80',
-      mintLeafImg: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=400&q=80',
-      basilLeafImg: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=400&q=80'
+      ]
     },
     {
       id: 'speciality',
@@ -56,13 +49,7 @@ export const ProductPortfolio: React.FC = () => {
         'Neem / Azadirachtin-based products',
         'Speciality crop-care products',
         'Natural and sustainable agricultural products'
-      ],
-      backLeftImg: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
-      frontLeftImg: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=600&q=80',
-      topRightImg: 'https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=500&q=80',
-      farRightImg: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80',
-      mintLeafImg: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=400&q=80',
-      basilLeafImg: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80'
+      ]
     }
   ];
 
@@ -80,8 +67,8 @@ export const ProductPortfolio: React.FC = () => {
   const current = categories[activeIndex];
 
   return (
-    <section 
-      className="portfolio-section" 
+    <section
+      className="portfolio-section"
       id="product"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
@@ -102,30 +89,36 @@ export const ProductPortfolio: React.FC = () => {
           </p>
         </div>
 
-        {/* Floating Side Visuals & Floating Leaves (Fixed Position Images) */}
+        {/* Floating Side Visuals & Floating Leaves */}
         {/* Left Side Floating Cards & Leaf Sprig */}
         <div className="port-floating-left">
-          <div className="port-img-card port-img-back-left reveal-portfolio-img port-pair-1">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Sample Product Back Left" className="port-sample-img" />
+          {/* Left top small image: Portfolio-6.png */}
+          <div className="port-leaf-sprig port-leaf-mint reveal-portfolio-img port-pair-1">
+            <img src={portImg6} alt="Portfolio Leaf" className="leaf-sample-img" />
           </div>
-          <div className="port-img-card port-img-front-left reveal-portfolio-img port-pair-2">
-            <img src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=600&q=80" alt="Sample Product Front Left" className="port-sample-img" />
+          {/* Next image: Portfolio-2.jpeg */}
+          <div className="port-img-card port-img-back-left reveal-portfolio-img port-pair-2">
+            <img src={portImg2} alt="Crop Nutrition" className="port-sample-img" />
           </div>
-          <div className="port-leaf-sprig port-leaf-mint reveal-portfolio-img port-pair-3">
-            <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=400&q=80" alt="Mint Leaf Sample" className="leaf-sample-img" />
+          {/* Next image: Portfolio-3.jpeg */}
+          <div className="port-img-card port-img-front-left reveal-portfolio-img port-pair-3">
+            <img src={portImg3} alt="Harvest Agriculture" className="port-sample-img" />
           </div>
         </div>
 
         {/* Right Side Floating Cards & Leaf Sprig */}
         <div className="port-floating-right">
+          {/* Right top first image: Portfolio-4.jpeg */}
           <div className="port-img-card port-img-top-right reveal-portfolio-img port-pair-1">
-            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=500&q=80" alt="Sample Product Top Right" className="port-sample-img" />
+            <img src={portImg4} alt="Farmer Spraying Nutrition" className="port-sample-img" />
           </div>
+          {/* Next image: Portfolio-5.jpeg */}
           <div className="port-img-card port-img-far-right reveal-portfolio-img port-pair-2">
-            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80" alt="Sample Product Far Right" className="port-sample-img" />
+            <img src={portImg5} alt="Farmer In Field" className="port-sample-img" />
           </div>
+          {/* Final last small image: Portfolio-6.png */}
           <div className="port-leaf-sprig port-leaf-basil reveal-portfolio-img port-pair-3">
-            <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=400&q=80" alt="Basil Leaf Sample" className="leaf-sample-img" />
+            <img src={portImg1} alt="Portfolio Leaf" className="leaf-sample-img" />
           </div>
         </div>
 

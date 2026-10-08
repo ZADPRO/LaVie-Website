@@ -1746,12 +1746,13 @@
 
 .port-leaf-mint {
   position: absolute;
-  top: 50px;
-  right: 0;
-  width: 95px;
-  height: 95px;
+  top: 10px;
+  right: -100px;
+  width: 195px;
+  height: 195px;
   z-index: 3;
   animation: floatMint 4.5s ease-in-out infinite;
+
 }
 
 /* Floating Images Right (Top Card + Far Right Card + Basil Leaf) */
@@ -1786,9 +1787,9 @@
 .port-leaf-basil {
   position: absolute;
   bottom: 20px;
-  left: 10px;
-  width: 100px;
-  height: 100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
   z-index: 3;
   animation: floatBasil 5s ease-in-out infinite;
 }
@@ -3355,9 +3356,10 @@
     transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Pair 1 - Initial hidden states */
-.port-img-back-left.reveal-portfolio-img {
-  transform: translateX(-70px) translateY(20px) rotate(-22deg) scale(0.92);
+/* Pair 1 (Top Pair: Left small leaf + Right top card) - Initial hidden states */
+.port-leaf-mint.reveal-portfolio-img {
+  transform: scale(0.4) translateY(-20px);
+  animation-play-state: paused !important;
 }
 
 .port-img-top-right.reveal-portfolio-img {
@@ -3369,9 +3371,10 @@
 }
 
 /* Pair 1 - Visible active states */
-.port-img-back-left.reveal-portfolio-img.is-visible {
+.port-leaf-mint.reveal-portfolio-img.is-visible {
   opacity: 1 !important;
-  transform: rotate(-12deg) !important;
+  transform: scale(1) translateY(0) !important;
+  animation-play-state: running !important;
 }
 
 .port-img-top-right.reveal-portfolio-img.is-visible {
@@ -3379,9 +3382,9 @@
   transform: rotate(10deg) !important;
 }
 
-/* Pair 2 - Initial hidden states */
-.port-img-front-left.reveal-portfolio-img {
-  transform: translateX(-70px) translateY(30px) rotate(-16deg) scale(0.92);
+/* Pair 2 (Middle Pair: Left card + Right card) - Initial hidden states */
+.port-img-back-left.reveal-portfolio-img {
+  transform: translateX(-70px) translateY(20px) rotate(-22deg) scale(0.92);
 }
 
 .port-img-far-right.reveal-portfolio-img {
@@ -3393,9 +3396,9 @@
 }
 
 /* Pair 2 - Visible active states */
-.port-img-front-left.reveal-portfolio-img.is-visible {
+.port-img-back-left.reveal-portfolio-img.is-visible {
   opacity: 1 !important;
-  transform: rotate(-6deg) !important;
+  transform: rotate(-12deg) !important;
 }
 
 .port-img-far-right.reveal-portfolio-img.is-visible {
@@ -3403,8 +3406,11 @@
   transform: rotate(11deg) !important;
 }
 
-/* Pair 3 (Leaves) - Initial hidden states */
-.port-leaf-mint.reveal-portfolio-img,
+/* Pair 3 (Bottom Pair: Left card + Right small leaf) - Initial hidden states */
+.port-img-front-left.reveal-portfolio-img {
+  transform: translateX(-70px) translateY(30px) rotate(-16deg) scale(0.92);
+}
+
 .port-leaf-basil.reveal-portfolio-img {
   transform: scale(0.4) translateY(25px);
   animation-play-state: paused !important;
@@ -3415,7 +3421,11 @@
 }
 
 /* Pair 3 - Visible active states */
-.port-leaf-mint.reveal-portfolio-img.is-visible,
+.port-img-front-left.reveal-portfolio-img.is-visible {
+  opacity: 1 !important;
+  transform: rotate(-6deg) !important;
+}
+
 .port-leaf-basil.reveal-portfolio-img.is-visible {
   opacity: 1 !important;
   transform: scale(1) translateY(0) !important;
@@ -4217,7 +4227,7 @@ body {
     gap: 1.25rem !important;
   }
 
-  .vm-cards-grid > .vm-mission-card:first-child {
+  .vm-cards-grid>.vm-mission-card:first-child {
     grid-column-start: 1 !important;
   }
 }
