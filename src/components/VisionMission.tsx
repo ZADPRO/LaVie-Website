@@ -30,19 +30,20 @@ export const VisionMission: React.FC = () => {
       {/* Background Watermark Illustration Pattern */}
       <div className="vm-watermark-bg"></div>
 
+      {/* Featured Arch Image - Covering full height of section */}
+      <div className="vm-arch-image-wrapper">
+        <img
+          src={visionImg}
+          alt="Agri science vision"
+          className="vm-arch-img"
+        />
+      </div>
+
       <div className="vm-container">
-        {/* Top Grid: Left 38% Image & Right Vision/Mission Headings */}
+        {/* Top Grid: Left 38% Spacer & Right Vision/Mission Headings */}
         <div className="vm-top-grid">
-          {/* Left Column: 38% Featured Arch Image */}
-          <div className="vm-image-col">
-            <div className="vm-arch-image-wrapper">
-              <img
-                src={visionImg}
-                alt="Agri science vision"
-                className="vm-arch-img"
-              />
-            </div>
-          </div>
+          {/* Left Column Spacer for arch image */}
+          <div className="vm-image-col" aria-hidden="true"></div>
 
           {/* Right Column: Vision Header, Statement & Mission Heading */}
           <div className="vm-content-col">

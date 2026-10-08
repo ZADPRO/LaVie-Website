@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
+import whyImg1 from '../assets/why/Why-1.jpeg';
+import whyImg2 from '../assets/why/Why-2.jpeg';
 
 export const WhyLaVie: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -51,7 +53,7 @@ export const WhyLaVie: React.FC = () => {
           {/* Image 1: Main Top Left Farmer Image */}
           <div className="why-img-card img-card-1">
             <img
-              src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=800&q=80"
+              src={whyImg1}
               alt="Farmer inspecting crop health"
               className="why-img"
             />
@@ -60,8 +62,8 @@ export const WhyLaVie: React.FC = () => {
           {/* Image 2: Overlapping Bottom Right Agriculture Image */}
           <div className="why-img-card img-card-2">
             <img
-              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
-              alt="Modern agricultural field"
+              src={whyImg2}
+              alt="Agricultural advisory and field inspection"
               className="why-img"
             />
           </div>
