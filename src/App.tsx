@@ -6,6 +6,7 @@ import { Manufacturing } from './components/Manufacturing';
 import { VisionMission } from './components/VisionMission';
 import { WhyLaVie } from './components/WhyLaVie';
 import { ProductPortfolio } from './components/ProductPortfolio';
+import { WhatWeProvide } from './components/WhatWeProvide';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <VisionMission />
         <WhyLaVie />
         <ProductPortfolio />
+        <WhatWeProvide />
       </main>
     </div>
   );

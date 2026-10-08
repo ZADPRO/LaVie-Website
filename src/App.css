@@ -1752,46 +1752,46 @@
 /* Floating Images Left (Back Card + Front Card + Mint Leaf) */
 .port-floating-left {
   position: absolute;
-  top: 40px;
-  left: 2%;
-  width: 320px;
-  height: 380px;
+  top: 60px;
+  left: 0;
+  width: 290px;
+  height: 360px;
   pointer-events: none;
+  z-index: 1;
 }
 
 .port-img-card {
   position: absolute;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .port-img-back-left {
-  width: 175px;
-  height: 235px;
+  width: 200px;
+  height: 255px;
   top: 0;
-  left: 10px;
+  left: 0px;
   transform: rotate(-12deg);
   z-index: 1;
 }
 
 .port-img-front-left {
-  width: 180px;
-  height: 240px;
-  top: 100px;
-  left: 70px;
+  width: 155px;
+  height: 210px;
+  top: 195px;
+  left: 105px;
   transform: rotate(-6deg);
   z-index: 2;
-  /* border: 4px solid #ffffff; */
 }
 
 .port-leaf-mint {
   position: absolute;
-  top: 60px;
-  right: 10px;
-  width: 110px;
-  height: 110px;
+  top: 50px;
+  right: 0;
+  width: 95px;
+  height: 95px;
   z-index: 3;
   animation: floatMint 4.5s ease-in-out infinite;
 }
@@ -1799,38 +1799,38 @@
 /* Floating Images Right (Top Card + Far Right Card + Basil Leaf) */
 .port-floating-right {
   position: absolute;
-  top: 40px;
-  right: 2%;
-  width: 340px;
-  height: 420px;
+  top: 60px;
+  right: 0;
+  width: 290px;
+  height: 360px;
   pointer-events: none;
+  z-index: 1;
 }
 
 .port-img-top-right {
-  width: 135px;
-  height: 165px;
+  width: 120px;
+  height: 150px;
   top: 0;
-  left: 30px;
+  left: 20px;
   transform: rotate(10deg);
   z-index: 1;
 }
 
 .port-img-far-right {
-  width: 190px;
-  height: 265px;
-  top: 90px;
-  right: 15px;
+  width: 160px;
+  height: 225px;
+  top: 75px;
+  right: 0;
   transform: rotate(11deg);
   z-index: 2;
-  /* border: 4px solid #ffffff; */
 }
 
 .port-leaf-basil {
   position: absolute;
   bottom: 20px;
-  left: 20px;
-  width: 120px;
-  height: 120px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
   z-index: 3;
   animation: floatBasil 5s ease-in-out infinite;
 }
@@ -1874,7 +1874,7 @@
 
 /* Center Content Display Stage */
 .portfolio-center-stage {
-  max-width: 740px;
+  max-width: 620px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1882,7 +1882,8 @@
   text-align: center;
   position: relative;
   z-index: 2;
-  margin: 1rem 0 3rem;
+  margin: 1rem auto 3rem;
+  padding: 0 1rem;
 }
 
 .port-cat-badge {
@@ -1920,7 +1921,7 @@
   font-weight: 500;
   color: var(--color-dark);
   line-height: 1.6;
-  max-width: 680px;
+  max-width: 580px;
   margin: 0 auto 2rem;
   text-align: center;
 }
@@ -1932,7 +1933,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.85rem 1.25rem;
-  max-width: 680px;
+  max-width: 580px;
 }
 
 .port-item-pill {
@@ -1994,12 +1995,20 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1366px) {
 
   .port-floating-left,
   .port-floating-right {
-    opacity: 0.4;
-    scale: 0.85;
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .port-floating-left,
+  .port-floating-right {
+    display: none;
   }
 }
 
@@ -2040,4 +2049,305 @@
 
 .portfolio-center-stage.wheel-arc-anim {
   animation: wheelArcSweep 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
+   What We Provide (30% / 70% Side-by-Side Row Layout)
+   ========================================================================== */
+.what-we-provide-section {
+  padding: 6rem 0 6rem 3rem;
+  background-color: #f9fbf9;
+  position: relative;
+  overflow: hidden;
+}
+
+.provide-container-row {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+/* Left Column (30% Width) */
+.provide-left-30 {
+  flex: 0 0 30%;
+  max-width: 30%;
+  min-width: 310px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-right: 1rem;
+}
+
+.provide-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-subheading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.provide-badge-tag .tag-icon {
+  color: var(--color-primary);
+}
+
+.provide-main-heading {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Award Emblem Badge (Left 30%) */
+.provide-fertilizer-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  width: 100%;
+}
+
+.highlight-icon-wrapper {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.highlight-award-icon {
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.5;
+}
+
+.highlight-num {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.highlight-text-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.highlight-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.highlight-sub {
+  font-family: var(--font-subheading);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.highlight-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-subheading);
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 0.25rem;
+}
+
+.highlight-rating .star-icon {
+  color: #f59e0b;
+}
+
+/* Arrow Controls (Left 30% Area) */
+.provide-controls-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.carousel-arrow-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.carousel-arrow-btn:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 133, 73, 0.25);
+}
+
+/* Right Column (70% Width - Carousel) */
+.provide-right-70 {
+  flex: 1;
+  width: 70%;
+  max-width: 70%;
+  overflow: hidden;
+}
+
+.product-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0 2rem 0;
+}
+
+.product-carousel-track {
+  display: flex;
+  gap: 24px;
+  will-change: transform;
+}
+
+.product-card-item {
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 24px;
+}
+
+.product-card-image-wrapper {
+  width: 100%;
+  height: 300px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  background-color: #e5e7eb;
+}
+
+.product-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card-item:hover .product-card-img {
+  transform: scale(1.05);
+}
+
+/* White Card Content Box Overlap */
+.product-card-content {
+  position: relative;
+  margin-top: -65px;
+  margin-left: 16px;
+  margin-right: 16px;
+  background-color: #ffffff;
+  border-radius: 20px 0px 20px 20px;
+  padding: 1.8rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2;
+  transition: var(--transition);
+  left: 16px;
+}
+
+.product-card-item:hover .product-card-content {
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Top-Right Notch Badge with Category Icon */
+.product-badge-corner {
+  position: absolute;
+  top: -24px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(14, 133, 73, 0.3);
+  transition: var(--transition);
+}
+
+.product-card-item:hover .product-badge-corner {
+  transform: scale(1.1) rotate(6deg);
+  background-color: var(--color-primary-hover);
+}
+
+.product-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.3;
+}
+
+.product-card-category {
+  font-family: var(--font-subheading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.product-card-desc {
+  font-family: var(--font-subheading);
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .provide-container-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .provide-left-30,
+  .provide-right-70 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .what-we-provide-section {
+    padding: 4rem 1.5rem;
+  }
 }
