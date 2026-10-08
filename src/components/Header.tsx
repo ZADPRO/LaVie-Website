@@ -8,7 +8,18 @@ export const Header: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const sections = ['home', 'about', 'foundation', 'manufacture', 'why-us', 'product', 'approach', 'contact'];
+    const sections = [
+      'home',
+      'about',
+      'foundation',
+      'manufacture',
+      'vision-mission',
+      'why-us',
+      'product',
+      'products',
+      'approach',
+      'contact'
+    ];
 
     const handleScroll = () => {
       // Header background scroll toggle
@@ -18,23 +29,42 @@ export const Header: React.FC = () => {
         setScrolled(false);
       }
 
-      // Active section detection
-      const scrollPosition = window.scrollY + 180;
+      // If at very top of page
+      if (window.scrollY < 120) {
+        setActiveSection('home');
+        return;
+      }
 
-      // Check sections
+      // If at bottom of page
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+        setActiveSection('contact');
+        return;
+      }
+
+      // Viewport trigger line (35% from the top of the viewport)
+      const triggerY = window.innerHeight * 0.35;
+      let matchedSection = '';
+
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            if (['foundation', 'manufacture', 'why-us'].includes(sectionId)) {
-              setActiveSection('about');
-            } else {
-              setActiveSection(sectionId);
-            }
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= triggerY && rect.bottom > triggerY) {
+            matchedSection = sectionId;
             break;
           }
+        }
+      }
+
+      if (matchedSection) {
+        if (['about', 'foundation', 'manufacture', 'vision-mission', 'why-us'].includes(matchedSection)) {
+          setActiveSection('about');
+        } else if (['product', 'products', 'approach'].includes(matchedSection)) {
+          setActiveSection('product');
+        } else if (matchedSection === 'contact') {
+          setActiveSection('contact');
+        } else {
+          setActiveSection(matchedSection);
         }
       }
     };

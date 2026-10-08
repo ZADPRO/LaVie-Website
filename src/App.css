@@ -22,7 +22,7 @@
 }
 
 .header-wrapper.scrolled .nav-link {
-  color: var(--color-primary);
+  color: #374151;
 }
 
 .header-wrapper.scrolled .nav-link::after {
@@ -32,6 +32,7 @@
 .header-wrapper.scrolled .nav-link:hover,
 .header-wrapper.scrolled .nav-link.active {
   color: var(--color-primary);
+  font-weight: 700;
 }
 
 .header-wrapper.scrolled .grid-menu-btn {
