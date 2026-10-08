@@ -1227,7 +1227,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .vm-cards-grid > .vm-mission-card:first-child {
+  .vm-cards-grid>.vm-mission-card:first-child {
     grid-column-start: 1;
   }
 }
@@ -2025,7 +2025,7 @@
 
 .port-cat-title {
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 0.4rem;
@@ -2042,7 +2042,7 @@
 
 .port-quote-text {
   font-family: var(--font-subheading);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--color-dark);
   line-height: 1.6;
@@ -2089,7 +2089,7 @@
 
 .port-item-label {
   font-family: var(--font-subheading);
-  font-size: 0.925rem;
+  font-size: 0.825rem;
   font-weight: 600;
   color: var(--color-dark);
 }
