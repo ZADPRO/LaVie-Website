@@ -805,13 +805,13 @@
   justify-content: flex-end;
   padding: 1.5rem 1.25rem;
   color: #ffffff;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+  /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); */
 }
 
 .foundation-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18); */
 }
 
 .card-bg-wrapper {
@@ -834,10 +834,6 @@
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top,
-      rgba(0, 0, 0, 0.88) 0%,
-      rgba(0, 0, 0, 0.4) 50%,
-      rgba(0, 0, 0, 0.05) 100%);
   transition: all 0.4s ease;
 }
 
@@ -845,7 +841,7 @@
   background: rgba(14, 25, 18, 0.58);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 .card-content {
@@ -859,7 +855,7 @@
 
 .card-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 1.45vw, 1.35rem);
+  font-size: 1.2rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
@@ -877,14 +873,14 @@
   height: 1px;
   background: rgba(255, 255, 255, 0.4);
   opacity: 0;
-  margin: 0;
+  margin-bottom: 0;
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.4s ease;
 }
 
 .foundation-card:hover .card-hz-line {
   width: 100%;
   opacity: 1;
-  margin: 0.75rem 0 0.85rem 0;
+  margin: 0.75rem 0 1.25rem 0;
 }
 
 .card-description {
@@ -932,7 +928,7 @@
   height: 16px;
   background: transparent;
   border-bottom-right-radius: 16px;
-  box-shadow: 6px 6px 0 6px #ffffff;
+  /* box-shadow: 6px 6px 0 6px #ffffff; */
   pointer-events: none;
 }
 
@@ -945,7 +941,7 @@
   height: 16px;
   background: transparent;
   border-bottom-right-radius: 16px;
-  box-shadow: 6px 6px 0 6px #ffffff;
+  /* box-shadow: 6px 6px 0 6px #ffffff; */
   pointer-events: none;
 }
 
@@ -960,7 +956,7 @@
   justify-content: center;
   pointer-events: none;
   z-index: 10;
-  box-shadow: 0 4px 14px rgba(14, 133, 73, 0.3);
+  /* box-shadow: 0 4px 14px rgba(14, 133, 73, 0.3); */
   transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
 }
 

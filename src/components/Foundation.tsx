@@ -1,5 +1,9 @@
 import React from 'react';
 import { Leaf } from 'lucide-react';
+import agricultureImg from '../assets/Foundation/Agriculture.jpeg';
+import manufacturingImg from '../assets/Foundation/Mnufacturing.jpeg';
+import agroTradingImg from '../assets/Foundation/Agro-trading.jpeg';
+import technologyImg from '../assets/Foundation/Technology.jpeg';
 
 export const Foundation: React.FC = () => {
   const foundationCards = [
@@ -7,25 +11,25 @@ export const Foundation: React.FC = () => {
       id: 1,
       title: "AGRICULTURE",
       description: "Post graduate agricultural expertise spanning agronomy, crop production, soil and plant nutrition, agricultural inputs and a deep understanding of farmer requirements. This scientific core guides every formulation we develop.",
-      bgImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
+      bgImage: agricultureImg
     },
     {
       id: 2,
       title: "MANUFACTURING",
       description: "Hands-on manufacturing and entrepreneurial experience in process management, production planning, quality assurance, raw-material management, packaging and day to day plant operations, ensuring consistent, scalable output.",
-      bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+      bgImage: manufacturingImg
     },
     {
       id: 3,
       title: "AGRO TRADING",
       description: "Proven experience in agro commodity sourcing, procurement, agricultural markets, supply chains, rural markets and distribution networks, giving La Vie dependable access to materials and farmers alike.",
-      bgImage: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=80"
+      bgImage: agroTradingImg
     },
     {
       id: 4,
       title: "TECHNOLOGY",
       description: "IT and software expertise supporting digital distribution, dealer management, product traceability, customer engagement and data driven decision making, bringing modern transparency to agri input supply.",
-      bgImage: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80"
+      bgImage: technologyImg
     }
   ];
 
