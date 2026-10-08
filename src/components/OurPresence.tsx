@@ -134,7 +134,7 @@ export const OurPresence: React.FC = () => {
     <section className="presence-section" id="contact">
       <div className="presence-container-row">
         {/* Left Column (30% Width): Tag, Title, Carousel Controls */}
-        <div className="presence-left-30">
+        <div className="presence-left-30 reveal-left">
           <div className="presence-badge-tag">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>OUR PRESENCE</span>
@@ -165,7 +165,7 @@ export const OurPresence: React.FC = () => {
 
         {/* Right Column (70% Width): Carousel Track with exact original Card design */}
         <div
-          className="presence-right-70"
+          className="presence-right-70 reveal-right delay-200"
           onMouseEnter={stopAutoSlide}
           onMouseLeave={startAutoSlide}
         >

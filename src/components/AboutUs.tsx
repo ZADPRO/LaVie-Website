@@ -10,7 +10,7 @@ export const AboutUs: React.FC = () => {
   return (
     <section className="about-section" id="about">
       <div className="about-container">
-        <div className="leaf-mask-container">
+        <div className="leaf-mask-container reveal-left">
           <img
             src={mainAboutImg}
             alt="Lush Agricultural Crops"
@@ -25,16 +25,16 @@ export const AboutUs: React.FC = () => {
 
         {/* Right Side: About Content */}
         <div className="about-content-column">
-          <div className="about-tag">
+          <div className="about-tag reveal-right">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>About La Vie</span>
           </div>
 
-          <h2 className="about-heading">
+          <h2 className="about-heading reveal-right delay-100">
             Science, Quality & Sustainability in Agriculture
           </h2>
 
-          <div className="about-description">
+          <div className="about-description reveal-right delay-200">
             <p>
               La Vie Crop Sciences is a Tamil Nadu based agricultural enterprise focused on crop nutrition, soil health, biological inputs and sustainable agriculture. Established in 2023, we combine agricultural expertise, manufacturing, agro trading and technology to deliver reliable solutions for modern farming.
             </p>
@@ -44,7 +44,7 @@ export const AboutUs: React.FC = () => {
           </div>
 
           {/* Four Highlight Points Grid */}
-          <div className="about-highlights-grid">
+          <div className="about-highlights-grid stagger-reveal">
             {/* Stat 1 */}
             <div className="stat-card">
               <div className="stat-icon-box">

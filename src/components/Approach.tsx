@@ -33,7 +33,7 @@ export const Approach: React.FC = () => {
     <section className="approach-section" id="approach">
       <div className="approach-container">
         {/* Top Header */}
-        <div className="approach-header">
+        <div className="approach-header reveal-up">
           <div className="approach-tag">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>OUR APPROACH</span>
@@ -45,7 +45,7 @@ export const Approach: React.FC = () => {
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="approach-cards-grid">
+        <div className="approach-cards-grid stagger-reveal">
           {approachItems.map((item) => (
             <div key={item.id} className="approach-card-item">
               <div className="approach-card-image-wrapper">

@@ -17,7 +17,7 @@ export const Manufacturing: React.FC = () => {
     <section className="mfg-section" id="manufacture">
       <div className="mfg-container">
         {/* Left Side Content */}
-        <div className="mfg-content-col">
+        <div className="mfg-content-col reveal-left">
           <div className="mfg-tag">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>MANUFACTURE</span>
@@ -32,7 +32,7 @@ export const Manufacturing: React.FC = () => {
           </p>
 
           {/* 5 Checklist Points in 2-Column Grid */}
-          <div className="mfg-points-grid">
+          <div className="mfg-points-grid stagger-reveal">
             {points.map((point, index) => (
               <div key={index} className="mfg-point-item">
                 <span className="mfg-check-badge">
@@ -45,7 +45,7 @@ export const Manufacturing: React.FC = () => {
         </div>
 
         {/* Right Side Image Composition */}
-        <div className="mfg-images-col">
+        <div className="mfg-images-col reveal-right delay-200">
           {/* Decorative Dot Grid Pattern */}
           <div className="mfg-dots-pattern" aria-hidden="true">
             {Array.from({ length: 24 }).map((_, i) => (
@@ -72,7 +72,7 @@ export const Manufacturing: React.FC = () => {
           </div>
 
           {/* Overlapping Floating White Stat Card */}
-          <div className="mfg-stat-badge">
+          <div className="mfg-stat-badge reveal-scale delay-400">
             <div className="mfg-stat-icon-wrapper">
               <Building2 size={26} />
             </div>

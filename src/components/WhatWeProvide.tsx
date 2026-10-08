@@ -104,7 +104,7 @@ export const WhatWeProvide: React.FC = () => {
     <section className="what-we-provide-section" id="products">
       <div className="provide-container-row">
         {/* Left Column (30% Width): Title, Badge, Controls */}
-        <div className="provide-left-30">
+        <div className="provide-left-30 reveal-left">
           <div className="provide-badge-tag">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>PRODUCT</span>
@@ -137,7 +137,7 @@ export const WhatWeProvide: React.FC = () => {
 
         {/* Right Column (70% Width): Product Cards Carousel */}
         <div
-          className="provide-right-70"
+          className="provide-right-70 reveal-right delay-200"
           onMouseEnter={stopAutoSlide}
           onMouseLeave={startAutoSlide}
         >

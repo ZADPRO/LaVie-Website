@@ -10,9 +10,11 @@ import { WhatWeProvide } from './components/WhatWeProvide';
 import { Approach } from './components/Approach';
 import { OurPresence } from './components/OurPresence';
 import { Footer } from './components/Footer';
+import { useScrollReveal } from './hooks/useScrollReveal';
 import './App.css';
 
 function App() {
+  useScrollReveal();
   return (
     <div className="app-container">
       <Header />

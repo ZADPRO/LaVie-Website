@@ -91,7 +91,7 @@ export const ProductPortfolio: React.FC = () => {
 
       <div className="portfolio-container">
         {/* Top Header */}
-        <div className="portfolio-header">
+        <div className="portfolio-header reveal-up">
           <div className="portfolio-tag">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>PRODUCT PORTFOLIO</span>
@@ -105,32 +105,32 @@ export const ProductPortfolio: React.FC = () => {
         {/* Floating Side Visuals & Floating Leaves (Fixed Position Images) */}
         {/* Left Side Floating Cards & Leaf Sprig */}
         <div className="port-floating-left">
-          <div className="port-img-card port-img-back-left">
+          <div className="port-img-card port-img-back-left reveal-portfolio-img port-pair-1">
             <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Sample Product Back Left" className="port-sample-img" />
           </div>
-          <div className="port-img-card port-img-front-left">
+          <div className="port-img-card port-img-front-left reveal-portfolio-img port-pair-2">
             <img src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=600&q=80" alt="Sample Product Front Left" className="port-sample-img" />
           </div>
-          <div className="port-leaf-sprig port-leaf-mint">
+          <div className="port-leaf-sprig port-leaf-mint reveal-portfolio-img port-pair-3">
             <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=400&q=80" alt="Mint Leaf Sample" className="leaf-sample-img" />
           </div>
         </div>
 
         {/* Right Side Floating Cards & Leaf Sprig */}
         <div className="port-floating-right">
-          <div className="port-img-card port-img-top-right">
+          <div className="port-img-card port-img-top-right reveal-portfolio-img port-pair-1">
             <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=500&q=80" alt="Sample Product Top Right" className="port-sample-img" />
           </div>
-          <div className="port-img-card port-img-far-right">
+          <div className="port-img-card port-img-far-right reveal-portfolio-img port-pair-2">
             <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80" alt="Sample Product Far Right" className="port-sample-img" />
           </div>
-          <div className="port-leaf-sprig port-leaf-basil">
+          <div className="port-leaf-sprig port-leaf-basil reveal-portfolio-img port-pair-3">
             <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=400&q=80" alt="Basil Leaf Sample" className="leaf-sample-img" />
           </div>
         </div>
 
         {/* Center Content Display Stage with Wheel Arc Rotation */}
-        <div className="portfolio-center-stage wheel-arc-anim" key={activeIndex}>
+        <div className="portfolio-center-stage wheel-arc-anim reveal-scale delay-200" key={activeIndex}>
           {/* <div className="port-cat-badge">{current.badge}</div> */}
 
           <h3 className="port-cat-title">{current.title}</h3>

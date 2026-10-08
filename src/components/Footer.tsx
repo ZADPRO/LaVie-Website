@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
 
       <div className="footer-container">
         {/* Left Column: Corporate Information Card (Overhanging) */}
-        <div className="footer-corporate-card">
+        <div className="footer-corporate-card reveal-up">
           <div className="corp-card-header">
             <h3 className="corp-card-subtitle">La Vie Agri Solutions Pvt. Ltd.</h3>
           </div>
@@ -146,7 +146,7 @@ export const Footer: React.FC = () => {
         {/* Right Section: Contacts, Farmer, Navigation & Brand */}
         <div className="footer-main-content">
           {/* Top Bar: Quick Enquiries & Call + Farmer Artwork */}
-          <div className="footer-top-bar">
+          <div className="footer-top-bar reveal-up delay-100">
             <div className="footer-quick-contacts">
               {/* General Enquiries */}
               <div className="quick-contact-card">
@@ -188,7 +188,7 @@ export const Footer: React.FC = () => {
           <div className="footer-divider" />
 
           {/* Bottom Grid: Navigation Links & Brand Info */}
-          <div className="footer-bottom-grid">
+          <div className="footer-bottom-grid reveal-up delay-200">
             {/* Useful Links */}
             <div className="footer-links-col">
               <h4 className="footer-col-title">Useful Links</h4>

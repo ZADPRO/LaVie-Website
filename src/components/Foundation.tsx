@@ -37,7 +37,7 @@ export const Foundation: React.FC = () => {
     <section className="foundation-section" id="foundation">
       <div className="foundation-container">
         {/* Header Section */}
-        <div className="foundation-header">
+        <div className="foundation-header reveal-up">
           <div className="foundation-tag">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>FOUNDATION</span>
@@ -49,7 +49,7 @@ export const Foundation: React.FC = () => {
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="foundation-cards-grid">
+        <div className="foundation-cards-grid stagger-reveal">
           {foundationCards.map((card) => (
             <div key={card.id} className="foundation-card">
               {/* Background Image & Gradient Overlay */}

@@ -42,7 +42,7 @@ export const WhyLaVie: React.FC = () => {
     <section className="why-section" id="why-us">
       <div className="why-container">
         {/* Left Side 3-Image Composition */}
-        <div className="why-images-col">
+        <div className="why-images-col reveal-left">
           {/* Decorative Dot Matrix Background Pattern */}
           <div className="why-dots-pattern" aria-hidden="true">
             {Array.from({ length: 96 }).map((_, i) => (
@@ -87,7 +87,7 @@ export const WhyLaVie: React.FC = () => {
         </div>
 
         {/* Right Side Content Accordion */}
-        <div className="why-content-col">
+        <div className="why-content-col reveal-right">
           <div className="why-tag">
             <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
             <span>WHY CHOOSE US</span>
@@ -102,7 +102,7 @@ export const WhyLaVie: React.FC = () => {
           </p>
 
           {/* Accordion List */}
-          <div className="why-accordion-list">
+          <div className="why-accordion-list stagger-reveal">
             {reasons.map((item, index) => {
               const isOpen = openIndex === index;
               return (

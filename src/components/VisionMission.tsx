@@ -31,7 +31,7 @@ export const VisionMission: React.FC = () => {
       <div className="vm-watermark-bg"></div>
 
       {/* Featured Arch Image - Covering full height of section */}
-      <div className="vm-arch-image-wrapper">
+      <div className="vm-arch-image-wrapper reveal-left">
         <img
           src={visionImg}
           alt="Agri science vision"
@@ -46,7 +46,7 @@ export const VisionMission: React.FC = () => {
           <div className="vm-image-col" aria-hidden="true"></div>
 
           {/* Right Column: Vision Header, Statement & Mission Heading */}
-          <div className="vm-content-col">
+          <div className="vm-content-col reveal-right">
             <div className="vm-tag">
               <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
               <span>OUR VISION & MISSION</span>
@@ -66,7 +66,7 @@ export const VisionMission: React.FC = () => {
 
         {/* Mission Cards Row - Overlapping bottom of image */}
         <div className="vm-mission-cards-wrapper">
-          <div className="vm-cards-grid">
+          <div className="vm-cards-grid stagger-reveal">
             {missionCards.map((card, index) => {
               const IconComponent = card.icon;
               return (

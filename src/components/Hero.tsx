@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
 
       <div className="hero-container">
         {/* Left Side Content */}
-        <div className="hero-content">
+        <div className="hero-content reveal-up">
           <div className="hero-headline-wrapper">
             <h1 className="hero-title">
               <span className="hero-line-1">Science For</span>
@@ -60,11 +60,11 @@ export const Hero: React.FC = () => {
             </h1>
           </div>
 
-          <p className="hero-subtitle">
+          <p className="hero-subtitle reveal-up delay-200">
             Science driven solutions for healthier soil, stronger crops and a more sustainable agricultural future.
           </p>
 
-          <div className="hero-cta-wrapper">
+          <div className="hero-cta-wrapper reveal-up delay-300">
             <a 
               href="#products" 
               className="btn-start"
