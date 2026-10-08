@@ -115,21 +115,7 @@ export const WhatWeProvide: React.FC = () => {
             What We<br />Provide
           </h2>
 
-          {/* Award Emblem Badge */}
-          <div className="provide-fertilizer-highlight">
-            <div className="highlight-icon-wrapper">
-              <Award size={34} className="highlight-award-icon" />
-              <span className="highlight-num">1</span>
-            </div>
-            <div className="highlight-text-details">
-              <h4 className="highlight-title">Best Service</h4>
-              <p className="highlight-sub">National Best Service Awards</p>
-              <div className="highlight-rating">
-                <span className="star-icon">★</span>
-                <span>5/5 For The Agrile Service</span>
-              </div>
-            </div>
-          </div>
+
 
           {/* Carousel Arrow Controls */}
           <div className="provide-controls-area">

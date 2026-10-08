@@ -2886,3 +2886,485 @@
     font-size: 1.9rem;
   }
 }
+
+/* =========================================================
+   FOOTER SECTION (Matching sampleScreen/fotter.png)
+   ========================================================= */
+
+.footer-section {
+  position: relative;
+  background-color: #06180e;
+  background-image:
+    linear-gradient(180deg, rgba(7, 24, 15, 0.94) 0%, rgba(5, 18, 11, 0.98) 100%),
+    url('./assets/common/footer-bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding-top: 5rem;
+  overflow: visible;
+}
+
+/* Top decorative quarter-circle leaf accent */
+.footer-top-leaf-shape {
+  position: absolute;
+  top: -48px;
+  left: 2.5rem;
+  width: 96px;
+  height: 48px;
+  background-color: #0b6834;
+  border-top-left-radius: 96px;
+  border-top-right-radius: 96px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+/* ── Left Column: Corporate Information Green Card (Overhangs) ── */
+.footer-corporate-card {
+  background: linear-gradient(165deg, #0d723a 0%, #085227 100%);
+  border-radius: 24px;
+  padding: 2.2rem 1.8rem;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  margin-top: -8.5rem;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.corp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.corp-card-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.corp-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.2rem 0;
+  line-height: 1.2;
+}
+
+.corp-card-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.corp-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.corp-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.corp-item-icon-wrapper {
+  color: #86efac;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.corp-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.corp-item-label {
+  font-family: var(--font-subheading);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.corp-item-value {
+  font-family: var(--font-subheading);
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.corp-item-value.highlight {
+  font-family: var(--font-subheading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fef08a;
+}
+
+.corp-item-value.cin-code {
+  font-family: var(--font-subheading);
+  font-size: 0.85rem;
+  background: rgba(0, 0, 0, 0.22);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  align-self: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  word-break: break-all;
+}
+
+.corp-item-link {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.corp-item-link:hover {
+  color: #fef08a;
+  text-decoration: underline;
+}
+
+.corp-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.14);
+  margin: 0.3rem 0;
+}
+
+/* ── Right Section ── */
+.footer-main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ── Top Bar: Quick Contacts + Farmer Artwork ── */
+.footer-top-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-quick-contacts {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.quick-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quick-contact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4ade80;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.quick-contact-card:hover .quick-contact-icon {
+  background: #0e8549;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.quick-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.quick-contact-label {
+  font-family: var(--font-subheading);
+  font-size: 0.85rem;
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.quick-contact-value {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.quick-contact-value:hover {
+  color: #86efac;
+}
+
+.footer-farmer-container {
+  position: relative;
+  height: 180px;
+  margin-top: -65px;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.footer-farmer-img {
+  height: 235px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
+}
+
+/* ── Divider ── */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-bottom: 2.8rem;
+}
+
+/* ── Bottom Grid: Navigation & Brand Column ── */
+.footer-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr;
+  gap: 3rem;
+  align-items: flex-start;
+  padding-bottom: 3.5rem;
+}
+
+.footer-links-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.01em;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links-list a {
+  font-family: var(--font-subheading);
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links-list a:hover {
+  color: #4ade80;
+  transform: translateX(4px);
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+}
+
+.footer-brand-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-brand-desc {
+  font-family: var(--font-subheading);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* ── Fixed Scroll to Top Button (appears when user starts scrolling) ── */
+.footer-scroll-top-btn {
+  position: fixed;
+  right: 2.2rem;
+  bottom: 2.2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #0b1510;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  pointer-events: none;
+}
+
+.footer-scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.footer-scroll-top-btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(14, 133, 73, 0.45);
+}
+
+/* ── Bottom Sub-bar ── */
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.3rem 0;
+  background-color: rgba(3, 10, 6, 0.7);
+}
+
+.footer-bottom-bar-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.footer-copyright-text {
+  font-family: var(--font-subheading);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 1200px) {
+  .footer-container {
+    grid-template-columns: 330px 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-farmer-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-corporate-card {
+    margin-top: -5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .footer-bottom-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand-col {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .footer-quick-contacts {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .footer-farmer-container {
+    align-self: flex-end;
+    margin-top: -20px;
+    height: 160px;
+  }
+
+  .footer-farmer-img {
+    height: 180px;
+  }
+
+  .footer-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-scroll-top-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+  }
+}

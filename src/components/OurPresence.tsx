@@ -51,7 +51,7 @@ const locations = [
       'Thiruvannamalai - 606755'
     ],
     city: 'Thiruvannamalai',
-    MapEmbed: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15585.22451323601!2d79.21113350667473!3d12.225152728664595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf130bb371c6d9%3A0xdcd97c6f5923fd17!2sLavie%20Agri%20Solutions%20Private%20Limited!5e1!3m2!1sen!2sin!4v1791452946205!5m2!1sen!2sin'
+    mapEmbed: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15585.22451323601!2d79.21113350667473!3d12.225152728664595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf130bb371c6d9%3A0xdcd97c6f5923fd17!2sLavie%20Agri%20Solutions%20Private%20Limited!5e1!3m2!1sen!2sin!4v1791452946205!5m2!1sen!2sin'
 
   },
 ];
