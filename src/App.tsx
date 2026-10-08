@@ -8,6 +8,7 @@ import { WhyLaVie } from './components/WhyLaVie';
 import { ProductPortfolio } from './components/ProductPortfolio';
 import { WhatWeProvide } from './components/WhatWeProvide';
 import { Approach } from './components/Approach';
+import { OurPresence } from './components/OurPresence';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <ProductPortfolio />
         <WhatWeProvide />
         <Approach />
+        <OurPresence />
       </main>
     </div>
   );

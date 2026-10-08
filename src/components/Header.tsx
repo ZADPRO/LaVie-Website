@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const sections = ['home', 'about', 'foundation', 'manufacture', 'why-us', 'product', 'approach'];
+    const sections = ['home', 'about', 'foundation', 'manufacture', 'why-us', 'product', 'approach', 'contact'];
 
     const handleScroll = () => {
       // Header background scroll toggle
@@ -108,6 +108,15 @@ export const Header: React.FC = () => {
                   onClick={(e) => handleNavClick(e, 'product')}
                 >
                   Product
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  href="#contact"
+                  className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
+                  onClick={(e) => handleNavClick(e, 'contact')}
+                >
+                  Contact
                 </a>
               </li>
             </ul>
