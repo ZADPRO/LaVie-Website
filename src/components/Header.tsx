@@ -1,11 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { PhoneCall } from 'lucide-react';
+import { PhoneCall, Menu, X } from 'lucide-react';
 import logoColorImg from '../assets/Logo/Logo.png';
 import logoWhiteImg from '../assets/Logo/La Vie Logo_white.png';
 
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     const sections = [
@@ -77,6 +89,7 @@ export const Header: React.FC = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setActiveSection(id);
+    setMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       const offset = 80;
@@ -93,7 +106,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className={`header-wrapper ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`header-wrapper ${scrolled || mobileMenuOpen ? 'scrolled' : ''}`}>
       <div className="header-container">
         {/* Left Side Group: Logo + Navigation Links */}
         <div className="header-left-group">
@@ -104,7 +117,7 @@ export const Header: React.FC = () => {
             onClick={(e) => handleNavClick(e, 'home')}
           >
             <img
-              src={scrolled ? logoColorImg : logoWhiteImg}
+              src={scrolled || mobileMenuOpen ? logoColorImg : logoWhiteImg}
               alt="La Vie Crop Science Pvt Ltd."
               className="logo-img"
             />
@@ -153,9 +166,9 @@ export const Header: React.FC = () => {
           </nav>
         </div>
 
-        {/* Right Side Action: Call-to-Action Phone Button */}
+        {/* Right Side Action: Call-to-Action Phone Button + Mobile Hamburger */}
         <div className="header-actions">
-          <a href="tel:+919003227469" className="header-phone-cta">
+          <a href="tel:+919003227469" className="header-phone-cta" title="Call Us">
             <div className="phone-icon-box">
               <PhoneCall size={18} />
             </div>
@@ -164,6 +177,104 @@ export const Header: React.FC = () => {
               <span className="phone-cta-num">+91 9003227469</span>
             </div>
           </a>
+
+          {/* Mobile Hamburger Toggle Button */}
+          <button
+            type="button"
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open navigation menu"
+          >
+            <Menu size={24} />
+          </button>
+        </div>
+      </div>
+
+      {/* Full-Screen Mobile Menu Bar */}
+      <div className={`mobile-nav-drawer ${mobileMenuOpen ? 'open' : ''}`}>
+        <div 
+          className="mobile-nav-backdrop" 
+          onClick={() => setMobileMenuOpen(false)} 
+          aria-hidden="true"
+        />
+        <div className="mobile-nav-panel">
+          {/* Header Row Inside Menu Bar with Logo and Close Icon */}
+          <div className="mobile-nav-header">
+            <a
+              href="#home"
+              className="mobile-nav-logo-link"
+              onClick={(e) => {
+                setMobileMenuOpen(false);
+                handleNavClick(e, 'home');
+              }}
+            >
+              <img
+                src={logoWhiteImg}
+                alt="La Vie Crop Science Pvt Ltd."
+                className="mobile-nav-logo-img"
+              />
+            </a>
+
+            <button
+              type="button"
+              className="mobile-nav-close-btn"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close navigation menu"
+            >
+              <X size={26} />
+            </button>
+          </div>
+
+          <ul className="mobile-nav-menu">
+            <li className="mobile-nav-item">
+              <a
+                href="#home"
+                className={`mobile-nav-link ${activeSection === 'home' ? 'active' : ''}`}
+                onClick={(e) => handleNavClick(e, 'home')}
+              >
+                <span>Home</span>
+              </a>
+            </li>
+            <li className="mobile-nav-item">
+              <a
+                href="#about"
+                className={`mobile-nav-link ${activeSection === 'about' ? 'active' : ''}`}
+                onClick={(e) => handleNavClick(e, 'about')}
+              >
+                <span>About Us</span>
+              </a>
+            </li>
+            <li className="mobile-nav-item">
+              <a
+                href="#product"
+                className={`mobile-nav-link ${activeSection === 'product' ? 'active' : ''}`}
+                onClick={(e) => handleNavClick(e, 'product')}
+              >
+                <span>Product</span>
+              </a>
+            </li>
+            <li className="mobile-nav-item">
+              <a
+                href="#contact"
+                className={`mobile-nav-link ${activeSection === 'contact' ? 'active' : ''}`}
+                onClick={(e) => handleNavClick(e, 'contact')}
+              >
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+
+          <div className="mobile-nav-footer">
+            <a href="tel:+919003227469" className="mobile-drawer-call-card" title="Give us a call">
+              <div className="mobile-phone-icon-box">
+                <PhoneCall size={20} />
+              </div>
+              <div className="mobile-phone-details">
+                <span className="mobile-phone-label">Give us a call</span>
+                <span className="mobile-phone-num">+91 9003227469</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </header>
