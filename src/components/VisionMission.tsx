@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlaskConical, ShieldCheck, Sprout } from 'lucide-react';
-import farmerImg from '../assets/Home/farmer.png';
+import visionImg from '../assets/Our-vission.jpeg';
 import leafIconImg from '../assets/common/Leaf.png';
 
 export const VisionMission: React.FC = () => {
@@ -37,8 +37,8 @@ export const VisionMission: React.FC = () => {
           <div className="vm-image-col">
             <div className="vm-arch-image-wrapper">
               <img
-                src={farmerImg}
-                alt="Agri science farmer in field"
+                src={visionImg}
+                alt="Agri science vision"
                 className="vm-arch-img"
               />
             </div>
