@@ -990,6 +990,15 @@
   padding-top: 1rem;
 }
 
+/* Visibility toggles for Desktop / Mobile order */
+.vm-mobile-header {
+  display: none;
+}
+
+.vm-desktop-tag {
+  display: inline-flex;
+}
+
 .vm-tag {
   display: inline-flex;
   align-items: center;
@@ -1118,48 +1127,6 @@
   line-height: 1.6;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .vm-arch-image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 520px;
-    height: 380px;
-    margin: 0 auto 2.5rem;
-    border-radius: 200px 200px 24px 24px;
-  }
-
-  .vm-image-col {
-    display: none;
-  }
-
-  .vm-top-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .vm-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .vm-cards-grid>.vm-mission-card:first-child {
-    grid-column-start: 1;
-  }
-}
-
-@media (max-width: 640px) {
-  .vm-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .vm-title {
-    font-size: 2.2rem;
-  }
-
-  .vm-arch-image-wrapper {
-    height: 320px;
-  }
-}
 
 /* =========================================
    MANUFACTURING INFRASTRUCTURE SECTION
@@ -4153,13 +4120,43 @@ body {
     padding: 0 !important;
   }
 
+  /* Tag first and center aligned */
+  .vm-mobile-header {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto 1.5rem auto !important;
+  }
+
+  .vm-mobile-header .vm-tag {
+    margin: 0 auto !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+  }
+
+  .vm-desktop-tag {
+    display: none !important;
+  }
+
+  /* Image in center position with 20px 0px 20px 0px border radius */
   .vm-arch-image-wrapper {
     position: relative !important;
     width: 100% !important;
     max-width: 440px !important;
-    height: 280px !important;
-    margin: 0 auto 2rem !important;
-    border-radius: 140px 140px 20px 20px !important;
+    height: 260px !important;
+    margin: 0 auto 2rem auto !important;
+    border-radius: 20px 0px 20px 0px !important;
+    overflow: hidden !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12) !important;
+    display: block !important;
+  }
+
+  .vm-arch-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 20px 0px 20px 0px !important;
   }
 
   .vm-image-col {
@@ -4168,27 +4165,76 @@ body {
 
   .vm-top-grid {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    gap: 0 !important;
+    margin-bottom: 2rem !important;
   }
 
+  .vm-content-col {
+    align-items: center !important;
+    text-align: center !important;
+    padding-top: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Title: Our Vision & Commitment (after image, same size as title 1) */
   .vm-title {
-    font-size: clamp(1.75rem, 5vw, 2.4rem) !important;
+    font-size: clamp(1.75rem, 5.5vw, 2.35rem) !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    margin: 0 auto 1.25rem auto !important;
+    max-width: 95% !important;
+  }
+
+  .vm-vision-statement {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+    text-align: left !important;
+    margin: 0 auto 2.25rem auto !important;
+    max-width: 100% !important;
+  }
+
+  .vm-mission-header {
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Mission Pillars title: same text size as title 1 */
+  .vm-mission-title {
+    font-size: clamp(1.75rem, 5.5vw, 2.35rem) !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 95% !important;
+  }
+
+  .vm-mission-cards-wrapper {
+    margin-top: 0 !important;
   }
 
   .vm-cards-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.25rem !important;
   }
+
+  .vm-cards-grid > .vm-mission-card:first-child {
+    grid-column-start: 1 !important;
+  }
 }
 
 @media (max-width: 640px) {
   .vm-cards-grid {
     grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    gap: 1.15rem !important;
   }
 
   .vm-arch-image-wrapper {
     height: 220px !important;
+    border-radius: 20px 0px 20px 0px !important;
+  }
+
+  .vm-arch-img {
+    border-radius: 20px 0px 20px 0px !important;
   }
 }
 

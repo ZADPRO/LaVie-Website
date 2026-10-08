@@ -30,6 +30,14 @@ export const VisionMission: React.FC = () => {
       {/* Background Watermark Illustration Pattern */}
       <div className="vm-watermark-bg"></div>
 
+      {/* Mobile Tag Header: Shown first on mobile, centered */}
+      <div className="vm-mobile-header reveal-up">
+        <div className="vm-tag">
+          <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
+          <span>OUR VISION &amp; MISSION</span>
+        </div>
+      </div>
+
       {/* Featured Arch Image - Covering full height of section */}
       <div className="vm-arch-image-wrapper reveal-left">
         <img
@@ -47,12 +55,13 @@ export const VisionMission: React.FC = () => {
 
           {/* Right Column: Vision Header, Statement & Mission Heading */}
           <div className="vm-content-col reveal-right">
-            <div className="vm-tag">
+            {/* Desktop Tag */}
+            <div className="vm-tag vm-desktop-tag">
               <img src={leafIconImg} alt="Leaf" className="tag-leaf-icon" />
-              <span>OUR VISION & MISSION</span>
+              <span>OUR VISION &amp; MISSION</span>
             </div>
 
-            <h3 className="vm-title">Our Vision & Commitment</h3>
+            <h3 className="vm-title">Our Vision &amp; Commitment</h3>
 
             <p className="vm-vision-statement">
               To build a trusted Indian agricultural-input and crop sciences company delivering science-led, reliable and farmer-focused solutions.
