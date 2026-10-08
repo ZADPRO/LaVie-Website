@@ -672,10 +672,10 @@
 }
 
 .stat-number {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-dark);
+  font-family: var(--font-subheading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-primary);
   line-height: 1.2;
 }
 
