@@ -1,6 +1,8 @@
 import React from 'react';
 import { Check, Building2 } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
+import mfgUnit1 from '../assets/Manufacture/Manufacturing-unit-1.jpeg';
+import mfgUnit2 from '../assets/Manufacture/Manufacturing-unit-2.jpeg';
 
 export const Manufacturing: React.FC = () => {
   const points = [
@@ -51,20 +53,20 @@ export const Manufacturing: React.FC = () => {
             ))}
           </div>
 
-          {/* Main Top Right Facility Image */}
+          {/* Main Top Right Facility Image (Manufacturing-unit-1) */}
           <div className="mfg-image-card main-img-card">
             <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80"
-              alt="La Vie Manufacturing Facility"
+              src={mfgUnit1}
+              alt="La Vie Manufacturing Unit 1"
               className="mfg-img"
             />
           </div>
 
-          {/* Overlapping Bottom Left Processing Image */}
+          {/* Overlapping Bottom Left Processing Image (Manufacturing-unit-2) */}
           <div className="mfg-image-card secondary-img-card">
             <img
-              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
-              alt="Quality Processing & Packaging"
+              src={mfgUnit2}
+              alt="La Vie Manufacturing Unit 2"
               className="mfg-img"
             />
           </div>
@@ -74,11 +76,10 @@ export const Manufacturing: React.FC = () => {
             <div className="mfg-stat-icon-wrapper">
               <Building2 size={26} />
             </div>
-            <div className="mfg-stat-number">30,000+<span> sq. ft</span></div>
-
+            <div className="mfg-stat-number">30,000+<br /><span> sq. ft</span></div>
           </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 };
