@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="footer-section">
       {/* Decorative top corner leaf accent */}
-      <div className="footer-top-leaf-shape" aria-hidden="true" />
+      {/* <div className="footer-top-leaf-shape" aria-hidden="true" /> */}
 
       <div className="footer-container">
         {/* Left Column: Corporate Information Card (Overhanging) */}
