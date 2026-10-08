@@ -1433,9 +1433,10 @@
 }
 
 .mfg-stat-number span {
-  color: var(--color-dark);
-  font-size: 0.9rem;
-  font-weight: 600;
+  color: #000000;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
 }
 
 .mfg-stat-label {
