@@ -2160,6 +2160,14 @@
   margin-top: 0.5rem;
 }
 
+.provide-controls-desktop {
+  display: flex;
+}
+
+.provide-controls-mobile {
+  display: none;
+}
+
 .carousel-arrow-btn {
   width: 50px;
   height: 50px;
@@ -4409,39 +4417,91 @@ body {
 }
 
 /* What We Provide Section Mobile Adaptations */
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .what-we-provide-section {
-    padding: 4.5rem 1.25rem !important;
+    padding: 4.5rem 0 4.5rem 0 !important;
   }
 
   .provide-container-row {
     flex-direction: column !important;
     gap: 2rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
   }
 
+  /* Tag & Title in center alignment */
   .provide-left-30 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     width: 100% !important;
-    padding-right: 0 !important;
+    padding: 0 1.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .provide-badge-tag {
+    margin: 0 auto !important;
+    display: inline-flex !important;
+    justify-content: center !important;
   }
 
   .provide-main-heading {
-    font-size: clamp(1.75rem, 5vw, 2.4rem) !important;
+    font-size: clamp(1.75rem, 5.5vw, 2.35rem) !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .desktop-heading-br {
+    display: none !important;
+  }
+
+  /* Hide desktop controls, show mobile controls below cards */
+  .provide-controls-desktop {
+    display: none !important;
   }
 
   .provide-right-70 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
     width: 100% !important;
+    overflow: hidden !important;
   }
-}
 
-@media (max-width: 640px) {
+  .product-carousel-wrapper {
+    width: 100% !important;
+    overflow: hidden !important;
+    padding: 0.5rem 0 1rem 1.25rem !important;
+  }
+
+  .product-carousel-track {
+    gap: 16px !important;
+  }
+
+  /* Full card with ~10% peek of next card */
   .product-card-item {
-    flex: 0 0 270px !important;
-    height: 380px !important;
+    flex: 0 0 calc(88vw - 28px) !important;
+    max-width: 360px !important;
+    min-width: 275px !important;
+    height: auto !important;
+  }
+
+  .product-card-image-wrapper {
+    height: 250px !important;
+  }
+
+  /* Carousel Arrow buttons after the product cards on mobile */
+  .provide-controls-mobile {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+    margin: 1.5rem auto 0 auto !important;
+    padding: 0 1.25rem !important;
+    width: 100% !important;
   }
 }
 
