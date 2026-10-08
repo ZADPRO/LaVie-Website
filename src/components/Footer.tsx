@@ -10,7 +10,7 @@ import {
   ChevronUp
 } from 'lucide-react';
 import logoWhiteImg from '../assets/Logo/La Vie Logo_white.png';
-import farmerImg from '../assets/Home/farmer.png';
+import contactTreeImg from '../assets/Fotter/Contact-Tree.png';
 
 export const Footer: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -175,11 +175,11 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Farmer visual matching sample */}
+            {/* Contact plant tree visual matching */}
             <div className="footer-farmer-container">
               <img
-                src={farmerImg}
-                alt="Farmer with agricultural expertise"
+                src={contactTreeImg}
+                alt="Agricultural plant tree"
                 className="footer-farmer-img"
               />
             </div>
