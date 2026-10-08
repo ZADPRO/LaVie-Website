@@ -2538,6 +2538,14 @@
   margin-top: 0.5rem;
 }
 
+.presence-controls-desktop {
+  display: flex;
+}
+
+.presence-controls-mobile {
+  display: none;
+}
+
 /* Right Column (70% Width - Carousel) */
 .presence-right-70 {
   flex: 1;
@@ -4537,39 +4545,88 @@ body {
 }
 
 /* Our Presence Section Mobile Adaptations */
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .presence-section {
-    padding: 4.5rem 1.25rem !important;
+    padding: 4.5rem 0 4.5rem 0 !important;
   }
 
   .presence-container-row {
     flex-direction: column !important;
     gap: 2rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
     padding: 0 !important;
   }
 
+  /* Tag & Title in center alignment */
   .presence-left-30 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     width: 100% !important;
-    padding-right: 0 !important;
+    padding: 0 1.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .presence-badge-tag {
+    margin: 0 auto !important;
+    display: inline-flex !important;
+    justify-content: center !important;
   }
 
   .presence-main-heading {
-    font-size: clamp(1.75rem, 5vw, 2.4rem) !important;
+    font-size: clamp(1.75rem, 5.5vw, 2.35rem) !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Hide desktop controls, show mobile controls below cards */
+  .presence-controls-desktop {
+    display: none !important;
   }
 
   .presence-right-70 {
-    width: 100% !important;
+    flex: 0 0 100% !important;
     max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
   }
-}
 
-@media (max-width: 640px) {
+  .presence-carousel-wrapper {
+    width: 100% !important;
+    overflow: hidden !important;
+    padding: 0.5rem 0 1rem 1.25rem !important;
+  }
+
+  .presence-carousel-track {
+    gap: 16px !important;
+  }
+
+  /* Full card with ~10% peek of next card */
   .presence-card {
-    flex: 0 0 280px !important;
+    flex: 0 0 calc(88vw - 28px) !important;
+    max-width: 380px !important;
+    min-width: 275px !important;
     height: auto !important;
+  }
+
+  .presence-map-wrapper {
+    height: 220px !important;
+  }
+
+  /* Carousel Arrow buttons after presence cards on mobile */
+  .presence-controls-mobile {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+    margin: 1.5rem auto 0 auto !important;
+    padding: 0 1.25rem !important;
+    width: 100% !important;
   }
 }
 

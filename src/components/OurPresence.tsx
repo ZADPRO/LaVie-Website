@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
 
@@ -63,20 +63,30 @@ export const OurPresence: React.FC = () => {
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [cardOffset, setCardOffset] = useState(404);
 
+  const trackRef = useRef<HTMLDivElement | null>(null);
   const autoTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  useEffect(() => {
-    const updateOffset = () => {
-      if (window.innerWidth <= 640) {
-        setCardOffset(324);
-      } else {
-        setCardOffset(404);
+  const measureCardOffset = useCallback(() => {
+    if (trackRef.current && trackRef.current.firstElementChild) {
+      const firstCard = trackRef.current.firstElementChild as HTMLElement;
+      const cardWidth = firstCard.getBoundingClientRect().width;
+      const style = window.getComputedStyle(trackRef.current);
+      const gap = parseFloat(style.gap) || 24;
+      if (cardWidth > 0) {
+        setCardOffset(cardWidth + gap);
       }
-    };
-    updateOffset();
-    window.addEventListener('resize', updateOffset);
-    return () => window.removeEventListener('resize', updateOffset);
+    }
   }, []);
+
+  useEffect(() => {
+    measureCardOffset();
+    window.addEventListener('resize', measureCardOffset);
+    const timer = setTimeout(measureCardOffset, 250);
+    return () => {
+      window.removeEventListener('resize', measureCardOffset);
+      clearTimeout(timer);
+    };
+  }, [measureCardOffset]);
 
   const nextSlide = () => {
     setIsTransitioning(true);
@@ -141,11 +151,11 @@ export const OurPresence: React.FC = () => {
           </div>
 
           <h2 className="presence-main-heading">
-            Four Locations<br />Across<br />Tamil Nadu
+            Four Locations<br className="desktop-heading-br" /> Across<br className="desktop-heading-br" /> Tamil Nadu
           </h2>
 
-          {/* Carousel Arrow Controls matching WhatWeProvide */}
-          <div className="presence-controls-area">
+          {/* Desktop Carousel Arrow Controls */}
+          <div className="presence-controls-area presence-controls-desktop">
             <button
               className="carousel-arrow-btn prev-btn"
               onClick={handleManualPrev}
@@ -171,6 +181,7 @@ export const OurPresence: React.FC = () => {
         >
           <div className="presence-carousel-wrapper">
             <div
+              ref={trackRef}
               className="presence-carousel-track"
               onTransitionEnd={handleTransitionEnd}
               style={{
@@ -216,6 +227,24 @@ export const OurPresence: React.FC = () => {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Mobile Carousel Arrow Controls: Rendered after presence cards on mobile */}
+          <div className="presence-controls-area presence-controls-mobile">
+            <button
+              className="carousel-arrow-btn prev-btn"
+              onClick={handleManualPrev}
+              aria-label="Previous Location"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              className="carousel-arrow-btn next-btn"
+              onClick={handleManualNext}
+              aria-label="Next Location"
+            >
+              <ChevronRight size={22} />
+            </button>
           </div>
         </div>
       </div>
