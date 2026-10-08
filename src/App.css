@@ -2666,8 +2666,8 @@
 }
 
 .presence-title {
-  font-family: var(--font-heading);
-  font-size: 2.6rem;
+  font-family: var(--font-subheading);
+  font-size: 2rem;
   font-weight: 800;
   color: var(--color-dark);
   line-height: 1.15;
@@ -2727,17 +2727,25 @@
 /* ---- Individual Card ---- */
 .presence-card {
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* ---- Map ---- */
+.presence-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(14, 133, 73, 0.12);
+}
+
+/* ---- Map Wrapper ---- */
 .presence-map-wrapper {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 250px;
   background-color: #e5e7eb;
   overflow: hidden;
 }
@@ -2747,50 +2755,70 @@
   height: 100%;
   border: none;
   display: block;
-  filter: saturate(0.8) contrast(1.05);
+  filter: saturate(0.85) contrast(1.05);
 }
 
-.presence-map-badge {
+/* Location District Badge (replaces date badge from sample) */
+.presence-district-badge {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
   background-color: var(--color-primary);
   color: #ffffff;
-  padding: 0.35rem 0.85rem;
+  padding: 0.35rem 0.95rem;
   border-radius: 50px;
-  font-family: var(--font-subheading);
-  font-size: 0.78rem;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  box-shadow: 0 4px 12px rgba(14, 133, 73, 0.35);
+  letter-spacing: 0.06em;
+  box-shadow: 0 4px 14px rgba(14, 133, 73, 0.35);
+  z-index: 2;
+  pointer-events: none;
 }
 
-/* ---- Address Body ---- */
+/* Bottom-Left Notch Tab: Address Heading (replaces Ha Ei & comments) */
+.presence-heading-tab {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  padding: 0.5rem 1.15rem;
+  border-radius: 0 16px 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-primary);
+  font-family: var(--font-subheading);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 2;
+  box-shadow: 2px -2px 10px rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+}
+
+.presence-tab-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ---- Card Body with Address ---- */
 .presence-card-body {
-  padding: 1.5rem 1.8rem 1.8rem;
+  padding: 1.4rem 1.6rem 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  flex: 1;
+  background-color: #ffffff;
 }
 
-.presence-office-type {
+.presence-address-title {
   font-family: var(--font-subheading);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
-.presence-address {
-  font-family: var(--font-subheading);
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--color-text-main);
-  line-height: 1.7;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.55;
+  margin: 0;
 }
 
 /* ---- Counter ---- */

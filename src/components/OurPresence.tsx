@@ -6,30 +6,53 @@ const locations = [
   {
     id: 1,
     type: 'REGISTERED OFFICE',
-    address: '2, Casa Grand Tiara,\nAerodrome Road,\nCoimbatore - 641005',
+    district: 'COIMBATORE',
+    addressLines: [
+      '2, Casa Grand Tiara,',
+      'Aerodrome Road,',
+      'Coimbatore - 641005'
+    ],
     city: 'Coimbatore',
-    mapEmbed: 'https://maps.google.com/maps?q=Aerodrome+Road+Coimbatore+641005&output=embed&z=15',
+    mapEmbed: 'https://www.google.com/maps?cid=1774303926377452674&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed'
+
   },
   {
     id: 2,
     type: 'CORPORATE OFFICE',
-    address: '41, P M Nagar,\nSeelanaickanpatty,\nSalem - 636201',
+    district: 'SALEM',
+    addressLines: [
+      '41, P M Nagar,',
+      'Seelanaickanpatty,',
+      'Salem - 636201'
+    ],
     city: 'Salem',
-    mapEmbed: 'https://maps.google.com/maps?q=PM+Nagar+Seelanaickanpatty+Salem+636201&output=embed&z=15',
+    mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.533056043397!2d78.16829827322775!3d11.630477444949071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf579858d39a7%3A0xb32f60367f0a1761!2sLAVIE%20AGRI%20SOLUTIONS%20PRIVATE%20LIMITED!5e1!3m2!1sen!2sin!4v1791452720228!5m2!1sen!2sin'
+
   },
   {
     id: 3,
     type: 'MANUFACTURING FACILITY',
-    address: '1/51-1, Mettukadu,\nKoneripatty,\nNamakkal District - 637408',
+    district: 'NAMAKKAL',
+    addressLines: [
+      '1/51-1, Mettukadu,',
+      'Koneripatty,',
+      'Namakkal District - 637408'
+    ],
     city: 'Namakkal',
-    mapEmbed: 'https://maps.google.com/maps?q=Mettukadu+Koneripatty+Namakkal+637408&output=embed&z=15',
+    mapEmbed: 'https://www.google.com/maps?q=Mettukadu,+Koneripatti,+Namakkal,+Tamil+Nadu+637408&output=embed&z=15'
+
   },
   {
     id: 4,
     type: 'GODOWN',
-    address: '10/1, 10/2A, Kattuvelananthal,\nThiruvannamalai - 606755',
+    district: 'THIRUVANNAMALAI',
+    addressLines: [
+      '10/1, 10/2A, Kattuvelananthal,',
+      'Thiruvannamalai - 606755'
+    ],
     city: 'Thiruvannamalai',
-    mapEmbed: 'https://maps.google.com/maps?q=Kattuvelananthal+Thiruvannamalai+606755&output=embed&z=15',
+    MapEmbed: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15585.22451323601!2d79.21113350667473!3d12.225152728664595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf130bb371c6d9%3A0xdcd97c6f5923fd17!2sLavie%20Agri%20Solutions%20Private%20Limited!5e1!3m2!1sen!2sin!4v1791452946205!5m2!1sen!2sin'
+
   },
 ];
 
@@ -104,7 +127,7 @@ export const OurPresence: React.FC = () => {
             {visibleCards.map((loc) => (
               <div key={loc.id} className="presence-card">
 
-                {/* Map */}
+                {/* Map Section */}
                 <div className="presence-map-wrapper">
                   <iframe
                     src={loc.mapEmbed}
@@ -113,23 +136,29 @@ export const OurPresence: React.FC = () => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   />
-                  <div className="presence-map-badge">
-                    <MapPin size={14} strokeWidth={2.5} />
-                    <span>{loc.city}</span>
+
+                  {/* Top-Left: District Badge (replacing date badge) */}
+                  <div className="presence-district-badge">
+                    {loc.district}
+                  </div>
+
+                  {/* Bottom-Left Notch Tab: Address Heading (replacing Ha Ei & comment) */}
+                  <div className="presence-heading-tab">
+                    <MapPin size={14} className="presence-tab-icon" />
+                    <span>{loc.type}</span>
                   </div>
                 </div>
 
-                {/* Address */}
+                {/* Card Body: Address below (replacing article title, More details removed) */}
                 <div className="presence-card-body">
-                  <div className="presence-office-type">{loc.type}</div>
-                  <p className="presence-address">
-                    {loc.address.split('\n').map((line: string, idx: number, arr: string[]) => (
+                  <h3 className="presence-address-title">
+                    {loc.addressLines.map((line, idx) => (
                       <React.Fragment key={idx}>
                         {line}
-                        {idx < arr.length - 1 && <br />}
+                        {idx < loc.addressLines.length - 1 && <br />}
                       </React.Fragment>
                     ))}
-                  </p>
+                  </h3>
                 </div>
 
               </div>
