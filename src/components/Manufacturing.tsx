@@ -1,8 +1,9 @@
 import React from 'react';
-import { Check, Building2 } from 'lucide-react';
+import { Check } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
 import mfgUnit1 from '../assets/Manufacture/Manufacturing-unit-1.jpeg';
 import mfgUnit2 from '../assets/Manufacture/Manufacturing-unit-2.jpeg';
+import mfgAreaIcon from '../assets/Manufacture/Manufacturing-area-icon.png';
 
 export const Manufacturing: React.FC = () => {
   const points = [
@@ -71,10 +72,10 @@ export const Manufacturing: React.FC = () => {
             />
           </div>
 
-          {/* Overlapping Floating White Stat Card */}
+          {/* Overlapping Floating Green Stat Card */}
           <div className="mfg-stat-badge reveal-scale delay-400">
             <div className="mfg-stat-icon-wrapper">
-              <Building2 size={26} />
+              <img src={mfgAreaIcon} alt="Manufacturing Area" className="mfg-stat-icon-img" />
             </div>
             <div className="mfg-stat-number">30,000+<br /><span>sq. ft</span></div>
           </div>
