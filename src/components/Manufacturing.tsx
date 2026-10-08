@@ -76,7 +76,7 @@ export const Manufacturing: React.FC = () => {
             <div className="mfg-stat-icon-wrapper">
               <Building2 size={26} />
             </div>
-            <div className="mfg-stat-number">30,000+<br /><span> sq. ft</span></div>
+            <div className="mfg-stat-number">30,000+<br /><span>sq. ft</span></div>
           </div>
         </div>
       </div>
