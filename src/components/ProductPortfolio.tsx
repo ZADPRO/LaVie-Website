@@ -3,8 +3,8 @@ import { Check } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
 import portImg1 from '../assets/Portfolio/Portfolio-1.png';
 import portImg2 from '../assets/Portfolio/Portfolio-2.jpg';
-import portImg3 from '../assets/Portfolio/Portfolio-3.jpg';
-import portImg4 from '../assets/Portfolio/Portfolio-4.jpeg';
+import portImg3 from '../assets/Portfolio/Portfolio-4.jpg';
+import portImg4 from '../assets/Portfolio/Portfolio-3.jpg';
 import portImg5 from '../assets/Portfolio/Portfolio-5.jpg';
 import portImg6 from '../assets/Portfolio/Portfolio-6.png';
 
