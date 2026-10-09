@@ -1,11 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
+import whyVideo1 from '../assets/why/Video1.mp4';
 import whyImg1 from '../assets/why/Why-1.jpeg';
 import whyImg2 from '../assets/why/Why-2.jpeg';
 
 export const WhyLaVie: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay was prevented
+        });
+      }
+    }
+  }, []);
 
   const reasons = [
     {
@@ -66,13 +83,54 @@ export const WhyLaVie: React.FC = () => {
             ))}
           </div>
 
-          {/* Image 1: Main Top Left Farmer Image */}
+          {/* Image 1: Main Top Left Video Player with Loading State */}
           <div className="why-img-card img-card-1">
-            <img
-              src={whyImg1}
-              alt="Farmer inspecting crop health"
-              className="why-img"
-            />
+            <div className="why-video-wrapper">
+              {videoError ? (
+                /* Graceful fallback to poster image on load error */
+                <img
+                  src={whyImg1}
+                  alt="Farmer inspecting crop health"
+                  className="why-img"
+                />
+              ) : (
+                <>
+                  {/* Poster Image & Smooth Loading Spinner overlay while buffering */}
+                  <div
+                    className={`why-video-skeleton ${isVideoLoaded ? 'loaded' : ''}`}
+                    aria-hidden={isVideoLoaded}
+                  >
+                    <img
+                      src={whyImg1}
+                      alt="Video preview placeholder"
+                      className="why-video-poster"
+                    />
+                    <div className="why-video-loader-badge">
+                      <span className="why-video-spinner-ring"></span>
+                      <span>Loading Video...</span>
+                    </div>
+                  </div>
+
+                  {/* Autoplay Video */}
+                  <video
+                    ref={videoRef}
+                    src={whyVideo1}
+                    poster={whyImg1}
+                    className={`why-video ${isVideoLoaded ? 'loaded' : ''}`}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    onLoadedData={() => setIsVideoLoaded(true)}
+                    onCanPlay={() => setIsVideoLoaded(true)}
+                    onPlaying={() => setIsVideoLoaded(true)}
+                    onError={() => setVideoError(true)}
+                  />
+
+                </>
+              )}
+            </div>
           </div>
 
           {/* Image 2: Overlapping Bottom Right Agriculture Image */}

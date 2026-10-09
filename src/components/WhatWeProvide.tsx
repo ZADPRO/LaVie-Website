@@ -11,6 +11,10 @@ import {
 } from 'lucide-react';
 import productsData from '../data/products.json';
 import leafIconImg from '../assets/common/Leaf.png';
+import prod1Img from '../assets/Product/La Vie Super 6 in Tomato Fields(1).png';
+import prod2Img from '../assets/Product/Vie BIO MAX Agricultural Product Bucket.png';
+import prod3Img from '../assets/Product/La Vie Micro Max Banana Plantation.png';
+import prod4Img from '../assets/Product/La Vie Bio Sakthi in a Tropical Plantation.png';
 
 export interface Product {
   id: string;
@@ -22,7 +26,21 @@ export interface Product {
 }
 
 export const WhatWeProvide: React.FC = () => {
-  const baseProducts: Product[] = productsData;
+  const baseProducts: Product[] = productsData.map((prod, index) => ({
+    ...prod,
+    image:
+      prod.id === 'prod-1'
+        ? prod1Img
+        : prod.id === 'prod-2'
+          ? prod2Img
+          : prod.id === 'prod-3'
+            ? prod3Img
+            : prod.id === 'prod-4'
+              ? prod4Img
+              : index % 2 === 0
+                ? prod1Img
+                : prod2Img
+  }));
   // Triple the array to enable infinite circular looping
   const extendedProducts = [...baseProducts, ...baseProducts, ...baseProducts];
 

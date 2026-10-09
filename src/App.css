@@ -1464,6 +1464,97 @@
   transform: scale(1.06);
 }
 
+/* Why Section Video Player & Loading States */
+.why-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #0b2e1b;
+}
+
+.why-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity 0.65s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-video.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.img-card-1:hover .why-video.loaded {
+  transform: scale(1.05);
+}
+
+.why-video-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  background-color: #0b2e1b;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.why-video-skeleton.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.why-video-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.92);
+}
+
+.why-video-loader-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: rgba(14, 133, 73, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 0.45rem 0.9rem;
+  border-radius: 50px;
+  font-family: var(--font-subheading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.02em;
+}
+
+.why-video-spinner-ring {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: whyVideoSpin 0.8s linear infinite;
+}
+
+@keyframes whyVideoSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
 /* Green Star Accent */
 .why-star-accent1 {
   position: absolute;
@@ -2257,6 +2348,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform 0.5s ease;
 }
 

@@ -1,18 +1,18 @@
 [
   {
     "id": "prod-1",
-    "name": "Vie BIO GOLD",
-    "category": "Calcium Magnesium Sulphur Manure",
+    "name": "SUPER 6",
+    "category": "Protein Hydrolysate Amino Acid",
     "description": "High-purity water-soluble NPK formulations enriched with chelated trace elements for maximum absorption and root growth.",
     "icon": "Sprout",
     "image": "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=80"
   },
   {
     "id": "prod-2",
-    "name": "Vie CMS POWER",
-    "category": "Calcium Magnesium Sulphur Manure",
+    "name": "Vie BIO MAX",
+    "category": "Humic substance",
     "description": "Living and naturally derived biostimulants that stimulate plant vigour, biological root activity and soil microbial ecology.",
-    "icon": "Leaf",
+    "icon": "Leaf`",
     "image": "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=800&q=80"
   },
   {
@@ -25,8 +25,8 @@
   },
   {
     "id": "prod-4",
-    "name": " Vie PROM BOOST",
-    "category": "Phosphate Rich Organic Manure",
+    "name": "Vie BIO SAKTHI",
+    "category": "Fermented Organic manure",
     "description": "Phosphate Rich Organic Manure (PROM) and Potash Derived from Molasses (PDM) for sustainable long-term soil fertility.",
     "icon": "Droplets",
     "image": "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80"

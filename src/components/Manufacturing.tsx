@@ -1,8 +1,8 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import leafIconImg from '../assets/common/Leaf.png';
-import mfgUnit1 from '../assets/Manufacture/Manufacturing-unit-1.jpeg';
-import mfgUnit2 from '../assets/Manufacture/Manufacturing-unit-2.jpeg';
+import mfgUnit1 from '../assets/Manufacture/Manufacturing-unit-1.png';
+import mfgUnit2 from '../assets/Manufacture/Manufacturing-unit-2.png';
 import mfgAreaIcon from '../assets/Manufacture/Manufacturing-area-icon.png';
 
 export const Manufacturing: React.FC = () => {

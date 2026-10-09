@@ -1,8 +1,8 @@
 import React from 'react';
 import agricultureImg from '../assets/Foundation/Agriculture.jpeg';
-import manufacturingImg from '../assets/Foundation/Mnufacturing.jpeg';
+import manufacturingImg from '../assets/Foundation/Mnufacturing.png';
 import agroTradingImg from '../assets/Foundation/Agro-trading.jpeg';
-import technologyImg from '../assets/Foundation/Technology.jpeg';
+import technologyImg from '../assets/Foundation/Technology.jpg';
 import leafIconImg from '../assets/common/Leaf.png';
 
 export const Foundation: React.FC = () => {
