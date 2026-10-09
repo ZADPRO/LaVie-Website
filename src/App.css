@@ -92,29 +92,33 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   transition: var(--transition);
 }
 
 .header-phone-cta:hover .phone-icon-box {
-  background-color: #1a1a1a;
+  background-color: #f0fdf4;
+  color: var(--color-primary-dark, #0b6b3a);
   transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .header-wrapper.scrolled .phone-icon-box {
-  background-color: #000000;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  background-color: #ffffff;
+  color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .header-wrapper.scrolled .header-phone-cta:hover .phone-icon-box {
-  background-color: #1a1a1a;
+  background-color: #f0fdf4;
+  color: var(--color-primary-dark, #0b6b3a);
   transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .phone-cta-details {
@@ -1773,8 +1777,14 @@
   width: 195px;
   height: 195px;
   z-index: 3;
-  animation: floatMint 4.5s ease-in-out infinite;
+  perspective: 800px;
+}
 
+.port-leaf-mint .leaf-sample-img {
+  animation: leafFlutterLeft 5.4s ease-in-out infinite;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 /* Floating Images Right (Top Card + Far Right Card + Basil Leaf) */
@@ -1808,12 +1818,19 @@
 
 .port-leaf-basil {
   position: absolute;
-  bottom: 20px;
+  bottom: -60px;
   left: -100px;
   width: 200px;
   height: 200px;
   z-index: 3;
-  animation: floatBasil 5s ease-in-out infinite;
+  perspective: 800px;
+}
+
+.port-leaf-basil .leaf-sample-img {
+  animation: leafFlutterRight 6s ease-in-out infinite;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .port-sample-img {
@@ -1827,34 +1844,59 @@
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.26)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.16));
-  transition: filter 0.4s ease, transform 0.4s ease;
+  transition: filter 0.4s ease;
 }
 
 .port-leaf-sprig:hover .leaf-sample-img {
   filter: drop-shadow(0 22px 38px rgba(0, 0, 0, 0.32)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.2));
 }
 
-@keyframes floatMint {
-
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
+/* Dynamic Fluttering Leaf Animation with 3D Tilts and Breeze Motion */
+@keyframes leafFlutterLeft {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
-
+  16% {
+    transform: translate3d(10px, -14px, 20px) rotateX(14deg) rotateY(-10deg) rotateZ(7deg);
+  }
+  32% {
+    transform: translate3d(-8px, -26px, -12px) rotateX(-10deg) rotateY(16deg) rotateZ(-5deg);
+  }
   50% {
-    transform: translateY(-12px) rotate(6deg);
+    transform: translate3d(12px, -18px, 24px) rotateX(16deg) rotateY(-14deg) rotateZ(9deg);
+  }
+  68% {
+    transform: translate3d(-10px, -6px, -6px) rotateX(-12deg) rotateY(12deg) rotateZ(-7deg);
+  }
+  84% {
+    transform: translate3d(6px, 8px, 12px) rotateX(8deg) rotateY(-8deg) rotateZ(4deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 }
 
-@keyframes floatBasil {
-
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
+@keyframes leafFlutterRight {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
-
-  50% {
-    transform: translateY(-10px) rotate(-6deg);
+  18% {
+    transform: translate3d(-12px, -16px, 22px) rotateX(-16deg) rotateY(12deg) rotateZ(-8deg);
+  }
+  36% {
+    transform: translate3d(10px, -28px, -14px) rotateX(12deg) rotateY(-16deg) rotateZ(6deg);
+  }
+  54% {
+    transform: translate3d(-14px, -20px, 26px) rotateX(-18deg) rotateY(14deg) rotateZ(-10deg);
+  }
+  72% {
+    transform: translate3d(8px, -8px, -8px) rotateX(14deg) rotateY(-12deg) rotateZ(7deg);
+  }
+  88% {
+    transform: translate3d(-6px, 8px, 14px) rotateX(-10deg) rotateY(8deg) rotateZ(-4deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 }
 
@@ -3421,8 +3463,7 @@
 /* Pair 1 - Visible active states */
 .port-leaf-mint.reveal-portfolio-img.is-visible {
   opacity: 1 !important;
-  transform: scale(1) translateY(0) !important;
-  animation-play-state: running !important;
+  transform: none !important;
 }
 
 .port-img-top-right.reveal-portfolio-img.is-visible {
@@ -3476,8 +3517,7 @@
 
 .port-leaf-basil.reveal-portfolio-img.is-visible {
   opacity: 1 !important;
-  transform: scale(1) translateY(0) !important;
-  animation-play-state: running !important;
+  transform: none !important;
 }
 
 /* ==========================================================================
