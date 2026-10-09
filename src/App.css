@@ -2494,34 +2494,33 @@
 }
 
 /* =========================================================
-   OUR PRESENCE / LOCATION SECTION (Carousel + Original Card)
+   OUR PRESENCE / LOCATION SECTION (4 Cards Grid)
    ========================================================= */
 
 .presence-section {
-  padding: 6rem 0 6rem 3rem;
+  padding: 6.5rem 2rem;
   background-color: #f9fbf9;
   position: relative;
   overflow: hidden;
 }
 
 .presence-container-row {
-  max-width: 100vw;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3.5rem;
   width: 100%;
 }
 
-/* Left Column (30% Width) */
+/* Left Column (32% Width) */
 .presence-left-30 {
-  flex: 0 0 30%;
-  max-width: 25%;
-  min-width: 310px;
+  flex: 0 0 32%;
+  max-width: 32%;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  padding-right: 1rem;
 }
 
 .presence-badge-tag {
@@ -2538,148 +2537,149 @@
 
 .presence-main-heading {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 2.35rem;
   font-weight: 700;
   color: var(--color-dark);
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
-/* Arrow Controls (matching What We Provide) */
-.presence-controls-area {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
+.presence-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #4b5563;
+  margin: 0;
 }
 
-.presence-controls-desktop {
-  display: flex;
-}
-
-.presence-controls-mobile {
-  display: none;
-}
-
-/* Right Column (70% Width - Carousel) */
+/* Right Column: 4 Cards Grid */
 .presence-right-70 {
   flex: 1;
-  width: 70%;
-  max-width: 70%;
-  overflow: hidden;
+  width: 68%;
 }
 
-.presence-carousel-wrapper {
+.presence-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   width: 100%;
-  overflow: hidden;
-  padding: 1rem 0 2rem 0;
 }
 
-.presence-carousel-track {
-  display: flex;
-  gap: 24px;
-  will-change: transform;
-}
-
-/* Individual Card in Carousel Track (Original Design preserved) */
+/* Individual Address Card */
 .presence-card {
-  flex: 0 0 380px;
   background: #ffffff;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 1.6rem 1.6rem 1.7rem;
+  border: 1px solid rgba(14, 133, 73, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  gap: 1.2rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .presence-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 50px rgba(14, 133, 73, 0.12);
+  transform: translateY(-5px);
+  border-color: rgba(14, 133, 73, 0.35);
+  box-shadow: 0 18px 45px rgba(14, 133, 73, 0.12);
 }
 
-/* Map Wrapper */
-.presence-map-wrapper {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  background-color: #e5e7eb;
-  overflow: hidden;
+/* Card Header: Type badge & District pill */
+.presence-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.presence-map-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-  filter: saturate(0.85) contrast(1.05);
-}
-
-/* Location District Badge */
-.presence-district-badge {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background-color: var(--color-primary);
-  color: #ffffff;
-  padding: 0.35rem 0.95rem;
-  border-radius: 50px;
-  font-family: var(--font-heading);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  box-shadow: 0 4px 14px rgba(14, 133, 73, 0.35);
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Bottom-Left Notch Tab: Address Heading */
-.presence-heading-tab {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: #ffffff;
-  padding: 0.5rem 1.15rem;
-  border-radius: 0 16px 0 0;
+.presence-type-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
   color: var(--color-primary);
   font-family: var(--font-subheading);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  z-index: 2;
-  box-shadow: 2px -2px 10px rgba(0, 0, 0, 0.05);
-  pointer-events: none;
 }
 
-.presence-tab-icon {
-  color: var(--color-primary);
+.presence-icon-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 8px rgba(14, 133, 73, 0.5);
   flex-shrink: 0;
 }
 
-/* Card Body with Address */
-.presence-card-body {
-  padding: 1.4rem 1.6rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  background-color: #ffffff;
+.presence-district-pill {
+  display: inline-block;
+  background-color: rgba(14, 133, 73, 0.08);
+  color: var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
-.presence-address-title {
-  font-family: var(--font-subheading);
+/* Card Content: Icon + Address */
+.presence-card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.presence-location-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: rgba(14, 133, 73, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.presence-card:hover .presence-location-icon-wrapper {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(14, 133, 73, 0.25);
+}
+
+.presence-address-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.presence-city-heading {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-dark);
-  line-height: 1.55;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.presence-address-text {
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  color: #4b5563;
+  line-height: 1.6;
   margin: 0;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+/* Responsive adjustments */
+@media (max-width: 1100px) {
   .presence-section {
     padding: 5rem 1.5rem;
   }
@@ -2687,33 +2687,32 @@
   .presence-container-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .presence-left-30 {
     flex: 1 1 100%;
     max-width: 100%;
     min-width: 0;
-    padding-right: 0;
   }
 
   .presence-right-70 {
     width: 100%;
-    max-width: 100%;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   .presence-section {
-    padding: 4rem 1rem;
+    padding: 4rem 1.25rem;
   }
 
-  .presence-card {
-    flex: 0 0 300px;
+  .presence-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .presence-main-heading {
-    font-size: 1.85rem;
+    font-size: 2rem;
   }
 }
 

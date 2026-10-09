@@ -3,7 +3,6 @@ import {
   Mail,
   Headphones,
   Phone,
-  User,
   FileText,
   Calendar,
   Sprout,
