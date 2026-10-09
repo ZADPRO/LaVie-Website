@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { PhoneCall, Menu, X } from 'lucide-react';
-import logoColorImg from '../assets/Logo/Logo.png';
 import logoWhiteImg from '../assets/Logo/La Vie Logo_white.png';
 
 export const Header: React.FC = () => {
@@ -117,7 +116,7 @@ export const Header: React.FC = () => {
             onClick={(e) => handleNavClick(e, 'home')}
           >
             <img
-              src={scrolled || mobileMenuOpen ? logoColorImg : logoWhiteImg}
+              src={logoWhiteImg}
               alt="La Vie Crop Science Pvt Ltd."
               className="logo-img"
             />

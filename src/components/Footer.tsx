@@ -105,15 +105,7 @@ export const Footer: React.FC = () => {
             <div className="corp-divider" />
 
             {/* Primary Contact Person */}
-            <div className="corp-info-item">
-              <div className="corp-item-icon-wrapper">
-                <User size={18} />
-              </div>
-              <div className="corp-item-text">
-                <span className="corp-item-label">Primary Contact Person</span>
-                <span className="corp-item-value">Mahendran Ramasamy</span>
-              </div>
-            </div>
+
 
             {/* Official Phone Number */}
             <div className="corp-info-item">
